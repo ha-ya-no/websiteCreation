@@ -32,6 +32,15 @@ $breakpoints: (
     @return ($value/16)+rem;
 }
 
+/*common
+-------------------------*/
+img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: bottom;
+}
+
 /*header
 -------------------------*/
 .header {
@@ -39,7 +48,7 @@ $breakpoints: (
         @include m-inner(
     );
     @include m-flex();
-    padding: (50em/16);
+    padding: (35em/16) 0;
 }
 
 &__title {
@@ -48,14 +57,6 @@ $breakpoints: (
 
 &__logo {
     width: 280px;
-}
-
-&__inst {
-    width: 35px;
-}
-
-&__mail {
-    width: 60px;
 }
 }
 
@@ -118,15 +119,31 @@ $breakpoints: (
     }
 
     &__list {
-        margin: 0 (80em/16);
-        padding: 0;
+        // width: 100%;
+        @include m-inner();
+        // margin: 0 (80em/16);
+        padding: (50em/16);
     }
 
     &__item {
         opacity: 0;
+        text-align: right;
         transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
         margin-bottom: (20em/16);
+    }
+
+    &__inst {
+        width: 35px;
+    }
+
+    &__mail {
+        width: 60px;
+    }
+
+    &__link {
+        @include m-flex();
+        margin-top: (50em/16);
     }
 
     &.active .menu__item {
@@ -155,6 +172,10 @@ $breakpoints: (
 
         &:nth-child(6) {
             transition-delay: 0.7s;
+        }
+
+        &:nth-child(7) {
+            transition-delay: .8s;
         }
     }
 }
