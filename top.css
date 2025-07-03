@@ -8,53 +8,6 @@ body{
     z-index: 100;
 
 }
-/* ハンバーガー消しとく */
-/* .hamburger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100;
-    width: 48px;
-    height: 48px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-.hamburger__line {
-    position: absolute;
-    left: 11px;
-    width: 26px;
-    height: 2px;
-    background-color: #d2d2d2;
-    transition: all .4s;
-}
-
-.hamburger__line:nth-of-type(1) {
-    top: 14px;
-}
-
-.hamburger__line:nth-of-type(2) {
-    top: 23px;
-}
-
-.hamburger__line:nth__of__type(3) {
-    top: 32px;
-}
-
-/* メニューオープン時 */
-/*.hamburger.active .hamburger__line:nth__of__type(1) {
-    transform: translateY(9px) rotate(__45deg);
-}
-
-.hamburger.active .hamburger__line:nth__of__type(2) {
-    opacity: 0;
-}
-
-.hamburger.active .hamburger__line:nth__of__type(3) {
-    transform: translateY(-9px) rotate(45deg);
-}
-*/
 
 .nav {
     position: fixed;
