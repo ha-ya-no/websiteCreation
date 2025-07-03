@@ -1,0 +1,26 @@
+.profile{
+    .box{
+        display: flex;
+        align-items: flex-end;
+    }
+    .about{
+        position: relative;
+
+        &__img{
+            width: 60%;
+            height: auto;
+        }
+
+        &__label{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.2rem;
+            transform: rotate(90deg);
+        }
+        &__name{
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}

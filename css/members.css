@@ -1,0 +1,23 @@
+.profile .box {
+  display: flex;
+  align-items: flex-end;
+}
+.profile .about {
+  position: relative;
+}
+.profile .about__img {
+  width: 60%;
+  height: auto;
+}
+.profile .about__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  transform: rotate(90deg);
+}
+.profile .about__name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+/*# sourceMappingURL=members.css.map */
