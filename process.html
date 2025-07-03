@@ -6,21 +6,21 @@
     <title>process</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="../uemurasan/css/process.css">
-    <link rel="stylesheet" href="../uemurasan/style.css">
+    <link rel="stylesheet" href="../uemurasan/css/style.min.css">
 </head>
 <body>
     <header>
-        <div class="inner">
-            <h1>
-                <a href="#">
-                    <img class="logo" src="./img/logomobile.webp" alt="植村康平建築設計事務所">
+        <div class="header__inner">
+            <h1 class="header__title">
+                <a href="top.html">
+                    <img class="header__logo" src="./img/logomobile.webp" alt="植村康平建築設計事務所">
                 </a>
             </h1>
             <a href="https://www.instagram.com/k_uemura.archi/">
-                <img class="inst" src="./img/instIcon.png" alt="植村康平建築設計事務所インスタグラム">
+                <img class="header__inst" src="./img/instIcon.png" alt="植村康平建築設計事務所インスタグラム">
             </a>
             <a href="#">
-                <img class="mail" src="./img/mailIcon.png" alt="お問い合わせ">
+                <img class="header__mail" src="./img/mailIcon.png" alt="お問い合わせ">
             </a>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -28,13 +28,13 @@
                 <span></span>
             </div>
             <nav id="menu" class="menu">
-                <ul>
-                    <li><a href="#">top</a></li>
-                    <li><a href="#">compony</a></li>
-                    <li><a href="#">members</a></li>
-                    <li><a href="#">process</a></li>
-                    <li><a href="#">works</a></li>
-                    <li><a href="#">contact</a></li>
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="#">top</a></li>
+                    <li class="menu__item"><a href="#">compony</a></li>
+                    <li class="menu__item"><a href="#">members</a></li>
+                    <li class="menu__item"><a href="#">process</a></li>
+                    <li class="menu__item"><a href="#">works</a></li>
+                    <li class="menu__item"><a href="#">contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,8 +97,28 @@
 
 
 
-    <footer>
-<!-- コピペ -->
+    <footer class="footer">
+        <div class="footer__address">
+            <address class="footer__address-text">
+                <p class="footer__address-line">〒465-0085</p>
+                <p class="footer__address-line">愛知県名古屋市名東区西山本通2-23ニシヤマナガヤ2F</p>
+                <p class="footer__address-line">tel：052-734-2408</p>
+                <p class="footer__address-line">mail : info@uemura-arch.com</p>
+            </address>
+        </div>
+        <div class="footer__right">
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">works</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">members</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">process</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">contact</a></li>
+                </ul>
+            </nav>
+            <div class="footer__copy">
+                <small class="footer__copy-text">&copy; Kohei Uemura Architects All Rights Reserved</small>
+            </div>
+        </div>
     </footer>
 
     <script src="../uemurasan/script.js"></script>
