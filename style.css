@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/* 共通 */
+.inner {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* header*/
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* 会社ロゴ */
+header h1 {
+    flex: 1;
+}
+
+.logo {
+    width: 280px;
+}
+
+/*メールロゴ*/
+.mail {
+    width: 60px;
+}
+
+/* インスタアイコン*/
+.inst {
+    width: 35px;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    z-index: 1000;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    height: 1px;
+    width: 40px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 15px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0px, -10px);
+}
+
+/* メニュー */
+.menu {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 18px;
+    transition: opacity 0.6s ease;
+    z-index: 50;
+}
+
+.menu.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* メニューリスト */
+.menu ul {
+    list-style: none;
+    margin: 0 80px;
+    padding: 0;
+}
+
+.menu li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu.active li:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.menu.active li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.menu.active li:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.menu.active li:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+.menu.active li:nth-child(5) {
+    transition-delay: 0.6s;
+}
+
+.menu.active li:nth-child(6) {
+    transition-delay: 0.7s;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        justify-content: flex-start;
+    }
+
+    .menu ul {
+        margin-left: 40px;
+    }
+}
