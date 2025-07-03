@@ -44,11 +44,16 @@ $breakpoints: (
         margin-left: auto;
         margin-right: auto;
     }
+    .boxs{
+    @include m-flex( );
+    }
 
     .abouttwo{
     width: 50%;
     padding-bottom: (70em/16);
     }
+
+
 
     .about{
         position: relative;
@@ -81,11 +86,12 @@ $breakpoints: (
     //career
     .career{
     padding-bottom: (100em/16);
-    padding-top: (100em/16);
+    padding-top: (80em/16);
 
         &__list{
          list-style: none;
          border-left: 1px solid black;
+
 
            li{
            padding-bottom:(10em/16);
@@ -103,6 +109,15 @@ $breakpoints: (
                 padding-bottom:(10em/16);
             }
         }
+    }
+
+}
+
+
+//profiles
+    .profiles{
+    &__container{
+        @include m-flex( );
     }
 
 }
