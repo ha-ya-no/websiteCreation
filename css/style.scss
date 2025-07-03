@@ -158,3 +158,69 @@ $breakpoints: (
         }
     }
 }
+/*footer
+-------------------------*/
+.footer {
+    border-top: 1px solid $footer-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2.5em 1.25em; // 40px, 20px
+
+    &__address {
+        flex: 1;
+        min-width: 13.75em; // 220px/16
+        font-size: f-rem(16);
+
+        // &-text {
+        //     // 住所テキスト用
+        // }
+
+        &-line {
+            margin: 0 0 0.5em 0; // 8px/16
+            font-size: f-rem(14);
+        }
+    }
+
+    &__right {
+        flex: 1;
+        min-width: 13.75em;
+        line-height: 1.8;
+        text-align: right;
+        font-size: f-rem(16);
+    }
+
+    &__nav {
+        &-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0.625em 0; // 10px/16
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &-item {
+            margin-bottom: 0.3125em; // 5px/16
+        }
+
+        &-link {
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: inherit;
+            font-size: f-rem(14);
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: f-rem(12);
+        color: $footer-copy-color;
+        margin-top: 0.625em; // 10px/16
+    }
+}
