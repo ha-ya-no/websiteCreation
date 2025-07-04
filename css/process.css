@@ -1,7 +1,7 @@
 /*mixin
 -------------------------*/
 body {
-  font-size: 0.875rem;
+  font-size: 1rem;
   letter-spacing: 0.25em;
   line-height: 1.7;
   color: #595959;
@@ -18,7 +18,7 @@ body {
 }
 
 .process__flow {
-  padding: 2.5em 0;
+  padding: 3.125em 0;
 }
 @media screen and (min-width: 960px) {
   .process__flow {
@@ -29,16 +29,19 @@ body {
 .process__num {
   text-align: center;
   font-size: 5rem;
+  font-weight: bold;
   position: relative;
   left: 0;
   line-height: 1;
+  color: #e7e7e7;
 }
 @media screen and (min-width: 960px) {
   .process__num {
-    font-size: 6.25rem;
+    font-size: 9.375rem;
+    font-weight: bold;
     transform: rotate(90deg);
     width: 10%;
-    margin-left: -1.3em;
+    margin-left: -1.2em;
   }
 }
 .process__mobileTitle {
@@ -56,8 +59,15 @@ body {
 .process__pic {
   padding: 1.875em;
   border-radius: 50%;
+  margin: 0 auto;
   border: 1px rgba(0, 0, 0, 0.3) solid;
+  background-color: #fff;
   aspect-ratio: 1/1;
+}
+@media screen and (min-width: 768px) {
+  .process__pic {
+    width: 60%;
+  }
 }
 @media screen and (min-width: 960px) {
   .process__pic {

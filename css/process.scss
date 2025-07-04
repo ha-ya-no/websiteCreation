@@ -37,7 +37,7 @@ $breakpoints: (
 }
 
 body{
-    font-size: f-rem(14);
+    font-size: f-rem(16);
     letter-spacing: 0.25em;
     line-height: 1.7;
     color: #595959;
@@ -56,7 +56,7 @@ body{
 .process{
 
     &__flow{
-        padding: (40em/16) 0;
+        padding: (50em/16) 0;
         @include m-query(desktop) {
         display: flex;
         justify-content: space-between;
@@ -66,17 +66,19 @@ body{
     &__num{
         text-align: center;
         font-size:f-rem(80);
-        // font-weight: bold;
+        font-weight: bold;
         position: relative;
         left: 0;
         line-height:1.0;
+        color: #e7e7e7;
 
 
         @include m-query(desktop) {
-            font-size:f-rem(100);
+            font-size:f-rem(150);
+            font-weight: bold;
             transform: rotate(90deg);
             width: 10%;
-            margin-left: (-130em/100);
+            margin-left: (-120em/100);
             }
         }
 
@@ -85,6 +87,7 @@ body{
               font-weight: bold;
     font-size: f-rem(18);
     padding-top: (10em/18);
+
     padding-bottom: (20em/18);
     text-align: center;
             @include m-query(desktop) {
@@ -95,8 +98,14 @@ body{
 &__pic{
     padding: (30em/16);
     border-radius: 50%;
+    margin: 0 auto;
     border: 1px rgba($color: #000000, $alpha: 0.3) solid;
+    background-color: #fff;
     aspect-ratio: 1/1;
+
+    @include m-query(tablet) {
+        width: 60%;
+    }
 
     @include m-query(desktop) {
     width: 30%;
