@@ -32,26 +32,22 @@ $breakpoints: (
 }
 
 @include m-query(desktop){
-
-$footer-border: #ddd;
-    $footer-copy-color: #555;
-
     .footer {
         border-top: 1px solid $footer-border;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
-        padding: 2.5em 1.25em; // 40px, 20px
+
+        padding: 4.7em 6.2em; // 75px, 99px
 
         &__address {
             flex: 1;
             min-width: 13.75em; // 220px/16
             font-size: f-rem(16);
+            padding-top: 3.9em; //137 - 75px/16
+            // padding-left: 6.9em; //110px/16
 
-            // &-text {
-            //     // 住所テキスト用
-            // }
 
             &-line {
                 margin: 0 0 0.5em 0; // 8px/16
