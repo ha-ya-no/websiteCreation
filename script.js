@@ -18,7 +18,7 @@ document.addEventListener('click', (e) => {
 
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
-    const philosophyText = document.querySelector('.philosophy-text');
+    const philosophyText = document.querySelector('.philosophy__text');
     const body = document.body;
     let unlocked = false;
 

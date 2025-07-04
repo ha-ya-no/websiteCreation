@@ -119,10 +119,7 @@ img {
     }
 
     &__list {
-        // width: 100%;
         @include m-inner();
-        // margin: 0 (80em/16);
-        padding: (50em/16);
     }
 
     &__item {
