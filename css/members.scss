@@ -104,6 +104,7 @@ $breakpoints: (
     .awards{
         &__list{
             list-style: none;
+            padding-left: 0;
 
             li{
                 padding-bottom:(10em/16);
@@ -116,8 +117,48 @@ $breakpoints: (
 
 //profiles
     .profiles{
+        padding-top: (100em/16);
+        width: 40%;
+        align-items: center;
     &__container{
         @include m-flex( );
     }
+
+
+
+    .about{
+    position: relative;
+
+    &__label{
+            position: absolute;
+            top: (70em/16);
+            left: (20em/16);
+            font-size: f-rem(18);
+            transform: rotate(90deg);
+        }
+
+        &__container{
+            position: absolute;
+            bottom: (110em/16);
+            left: (400em/16);
+
+        }
+
+        &__name{
+            font-size: f-rem(32);
+            margin-bottom: (10em/16);
+        }
+
+        }
+
+
+        ul{
+            list-style: none;
+            padding-left: 0;
+
+            li{
+                padding-bottom:(10em/16);
+            }
+        }
 
 }
