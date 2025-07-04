@@ -6,31 +6,44 @@
     <meta name="viewport" content="width=device__width, initial__scale=1.0">
     <!-- sccの設定 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
-    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" href="./css/top.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
     <title>webサイト制作top</title>
 </head>
 
 <body>
     <header class="header">
-        <img src="images/uemuralogo.png" alt="ロゴ" class="logo">
-
-        <button class="hamburger" aria__label="メニュー" aria__controls="nav__menu" aria__expanded="false">
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
-            <span class="hamburger__line"></span>
-        </button>
-
-        <nav id="nav__menu" class="nav" aria__hidden="true">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="#" class="nav__link">ホーム</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">about</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">サービス</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">お問い合わせ</a></li>
-            </ul>
-        </nav>
+        <div class="header__inner">
+            <h1 class="header__title">
+                <a href="top.html">
+                    <img class="header__logo" src="./img/logomobile.webp" alt="植村康平建築設計事務所">
+                </a>
+            </h1>
+            <a href="https://www.instagram.com/k_uemura.archi/">
+                <img class="header__inst" src="./img/instIcon.png" alt="植村康平建築設計事務所インスタグラム">
+            </a>
+            <a href="#">
+                <img class="header__mail" src="./img/mailIcon.png" alt="お問い合わせ">
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="menu" class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="#">top</a></li>
+                    <li class="menu__item"><a href="#">compony</a></li>
+                    <li class="menu__item"><a href="#">members</a></li>
+                    <li class="menu__item"><a href="#">process</a></li>
+                    <li class="menu__item"><a href="#">works</a></li>
+                    <li class="menu__item"><a href="#">contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <span >
+    <span>
     <div class="span">
         <div class="half__black__filter"></div>
             <div class="span__nav">
@@ -69,7 +82,7 @@
         <article class="works__post">
             <a href="#">
                 <div class="works__img">
-                    <img src="/images/hehehe.jpg" alt="へへへのお部屋の画像です">
+                    <img src="/img/hehehe.jpg" alt="へへへのお部屋の画像です">
                 </div>
             <h2>へへへのお部屋</h2>
             <p>category</p>
@@ -78,7 +91,7 @@
         <article class="works__post">
             <a href="#">
                 <div class="works__img">
-                    <img src="/images/hehehe.jpg" alt="へへへのお部屋の画像です">
+                    <img src="/img/hehehe.jpg" alt="へへへのお部屋の画像です">
                 </div>
                 <h2>へへへのお部屋</h2>
                 <p>category</p>
@@ -87,7 +100,7 @@
         <article class="works__post">
             <a href="#">
                 <div class="works__img">
-                    <img src="/images/kadoniha.jpg" alt="へへへのお部屋の画像です">
+                    <img src="/img/kadoniha.jpg" alt="へへへのお部屋の画像です">
                 </div>
                 <h2>へへへのお部屋</h2>
                 <p>category</p>
@@ -96,7 +109,7 @@
         <article class="works__post">
             <a href="#">
                 <div class="works__img">
-                    <img src="/images/mikan.jpg" alt="へへへのお部屋の画像です">
+                    <img src="/img/mikan.jpg" alt="へへへのお部屋の画像です">
                 </div>
                 <h2>へへへのお部屋</h2>
                 <p>category</p>
@@ -105,7 +118,7 @@
         <article class="works__post">
             <a href="#">
                 <div class="works__img">
-                    <img src="/images/mikan.jpg" alt="へへへのお部屋の画像です">
+                    <img src="/img/mikan.jpg" alt="へへへのお部屋の画像です">
                 </div>
                 <h2>へへへのお部屋</h2>
                 <p>category</p>
@@ -116,22 +129,24 @@
 <!-- ふったーここから -->
 <footer class="footer">
     <div class="footer__address">
-        <address>
-            <p>〒465-0085</p>
-            <p>愛知県名古屋市名東区西山本通2-23ニシヤマナガヤ2F</p>
-            <p>tel：052-734-2408</p>
-            <p>mail : info@uemura-arch.com</p>
+        <address class="footer__address-text">
+            <p class="footer__address-line">〒465-0085</p>
+            <p class="footer__address-line">愛知県名古屋市名東区西山本通2-23ニシヤマナガヤ2F</p>
+            <p class="footer__address-line">tel：052-734-2408</p>
+            <p class="footer__address-line">mail : info@uemura-arch.com</p>
         </address>
     </div>
     <div class="footer__right">
-        <div class="footer__tag">
-            <a href="#">works</a>
-            <a href="#">members</a>
-            <a href="#">process</a>
-            <a href="#">contact</a>
-        </div>
+        <nav class="footer__nav">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">works</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">members</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">process</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link">contact</a></li>
+            </ul>
+        </nav>
         <div class="footer__copy">
-            <small>&copy; Kohei Uemura Architects All Rights Reserved</small>
+            <small class="footer__copy-text">&copy; Kohei Uemura Architects All Rights Reserved</small>
         </div>
     </div>
 </footer>

@@ -1,60 +1,8 @@
 @charset "UTF-8";
-<<<<<<< HEAD:css/process.scss
 
-=======
-<<<<<<< HEAD
->>>>>>> 032a6b298a0e7e37e0d9b652c7e5f15beac4ad1b:css/style.scss
-body{
-    font-size: 14px;
-    letter-spacing: 0.25em;
-    line-height: 1.7;
-}
-
-// @mixin m-inner($w: (1150/1440)*100%, $mw: 1440px) {
-//     width: $w;
-//     max-width: $mw;
-//     @include m-auto;
-//     @content;
-// }
-
-.main{
-    &__inner{
-        width: 90%;
-        margin: 0 auto;
-
-        // @include m-inner;
-    }
-}
-
-.process{
-    // padding: 15px 0;
-
-    &__flow{
-        padding: 15px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-
-&__pic{
-    width: 35%;
-    padding: 30px;
-    border-radius: 50%;
-    // border: 1px #000 solid;
-    border: 1px #000 solid;
-    aspect-ratio: 1/1;
-}
-
-&__text{
-    width: 60%;
-
-}
-
-&__title{
-    font-weight: bold;
-    font-size: 16px;
-    padding-bottom: 20px;
-}
-=======
+// ・スマホ版ファーストで作る！
+// ・font-size:f-rem(値);　で書く！
+// ・margin:(値em/font-size);
 
 $breakpoints: (
     "mobile": "screen and (min-width: 390px)",
@@ -70,7 +18,7 @@ $breakpoints: (
     }
 }
 
-@mixin m-inner($w: (1340/1440)*100%, $mw: 1340px) {
+@mixin m-inner($w: (1100/1440)*100%, $mw: 1340px) {
     width: $w;
     max-width: $mw;
     margin-left: auto;
@@ -86,5 +34,69 @@ $breakpoints: (
 
 @function f-rem($value) {
     @return ($value/16)+rem;
->>>>>>> company
+}
+
+body{
+    font-size: f-rem(14);
+    letter-spacing: 0.25em;
+    line-height: 1.7;
+}
+
+// .main{
+//     &__inner{
+//         width: 90%;
+//         margin: 0 auto;
+
+//         @include m-inner;
+//     }
+// }
+
+.process{
+&__num{
+transform: rotate(90deg);
+font-size:f-rem(100);
+position: relative;
+left: 0;
+}
+
+    &__inner{
+        width: 90%;
+        margin: 0 auto;
+display: flex;
+        justify-content: space-between;
+        @include m-inner;
+    }
+
+    &__flow{
+        padding: (30em/16) 0;
+        @include m-query(desktop) {
+        display: flex;
+        justify-content: space-between;
+        }
+    }
+
+&__pic{
+    padding: (30em/16);
+    border-radius: 50%;
+    // border: 1px #000 solid;
+    border: 1px #000 solid;
+    aspect-ratio: 1/1;
+
+    @include m-query(desktop) {
+    width: 35%;
+    }
+}
+
+&__text{
+    @include m-query(desktop) {
+    width: 60%;
+    margin: auto 0;
+    }
+}
+
+&__title{
+    font-weight: bold;
+    font-size: f-rem(16);
+    padding-bottom: 20px;
+}
 }
