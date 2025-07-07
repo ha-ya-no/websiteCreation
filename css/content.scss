@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+// ・スマホ版ファーストで作る！
+// ・font-size:f-rem(値);　で書く！
+// ・margin:(値em/font-size);
+
+$breakpoints: (
+    "mobile": "screen and (min-width: 390px)",
+    "tablet": "screen and (min-width: 768px)",
+    "desktop": "screen and (min-width: 960px)",
+    ) !default;
+
+/*mixin
+-------------------------*/
+@mixin m-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin m-inner($w: (1200/1440)*100%, $mw: 1340px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin m-flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+body{
+    font-size: f-rem(16);
+    letter-spacing: 0.25em;
+    line-height: 1.7;
+    color: #595959;
+    font-family:Helvetica, Arial,  sans-serif;
+}
+
+// .main{
+//     &__inner{
+//         width: 90%;
+//         margin: 0 auto;
+
+//         @include m-inner;
+//     }
+// }
+
+.content{
+&__top{
+    @include m-inner;
+}
+
+&__thumbnail{
+    width:90%;
+    aspect-ratio: 22/9;
+    object-fit: cover;
+}
+
+&__text{
+display: flex;
+justify-content: space-between;
+
+@include m-inner;
+}
+
+&__explain{
+    width: 50%;
+}
+
+&__list{
+    display: flex;
+}
+
+&__right{
+text-align: right;
+}
+
+&__picture{
+    width: 90%;
+display: flex;
+}
+// &__flex
+// }
+}

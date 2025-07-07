@@ -1,0 +1,44 @@
+/*mixin
+-------------------------*/
+body {
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  line-height: 1.7;
+  color: #595959;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.content__top {
+  width: 83.3333333333%;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content__thumbnail {
+  width: 90%;
+  aspect-ratio: 22/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content__text {
+  display: flex;
+  justify-content: space-between;
+  width: 83.3333333333%;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content__explain {
+  width: 50%;
+}
+.content__list {
+  display: flex;
+}
+.content__right {
+  text-align: right;
+}
+.content__picture {
+  width: 90%;
+  display: flex;
+}
+/*# sourceMappingURL=content.css.map */
