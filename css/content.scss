@@ -38,7 +38,7 @@ $breakpoints: (
 
 body{
     font-size: f-rem(16);
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     line-height: 1.7;
     color: #595959;
     font-family:Helvetica, Arial,  sans-serif;
@@ -56,7 +56,12 @@ body{
 .content{
 &__top{
     @include m-inner;
+    padding-bottom: (30em/16);
 }
+
+&__category{
+font-size: f-rem(14);
+color: #c2c2c2;}
 
 &__thumbnail{
     width:90%;
@@ -65,28 +70,50 @@ body{
 }
 
 &__text{
+    font-size: f-rem(14);
 display: flex;
 justify-content: space-between;
+padding: (80em/16) 0;
 
 @include m-inner;
 }
 
 &__explain{
-    width: 50%;
+    width: 45%;
 }
 
+&__detail{
+width: 25%;}
 &__list{
     display: flex;
+    justify-content: space-between;
 }
 
 &__right{
-text-align: right;
+// text-align: right;
+display: block;
 }
 
 &__picture{
+    object-fit: cover;
     width: 90%;
 display: flex;
 }
-// &__flex
-// }
+
+&__flex{
+width: 33.33%;
+}
+&__img{
+margin-bottom: -10px;
+width: 100%;
+}
+
+&__viewmore{
+margin: (50em/16) 0;
+padding: (30em/16) 0;
+
+width: 90%;
+margin-left: auto;
+
+}
 }

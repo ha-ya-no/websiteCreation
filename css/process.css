@@ -73,6 +73,7 @@ body {
   border: 1px rgba(0, 0, 0, 0.3) solid;
   background-color: #fff;
   aspect-ratio: 1/1;
+  width: 80%;
 }
 @media screen and (min-width: 768px) {
   .process__pic {

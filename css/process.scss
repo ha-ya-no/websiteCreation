@@ -115,6 +115,7 @@ body{
     border: 1px rgba($color: #000000, $alpha: 0.3) solid;
     background-color: #fff;
     aspect-ratio: 1/1;
+    width: 80%;
 
     @include m-query(tablet) {
         width: 60%;
