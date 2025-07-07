@@ -75,8 +75,12 @@ boby {
     }
 
     &__title {
-        font-size: f-rem(32);
+        font-size: f-rem(24);
         margin-bottom: (60em/32);
+
+        @include m-query(tablet) {
+            font-size: f-rem(32);
+        }
     }
 
     &__sentence {
@@ -146,7 +150,7 @@ boby {
         margin-bottom: (50em/20);
     }
 
-    &__list {
+    &__item {
         margin-bottom: (15em/16);
     }
 }
@@ -169,7 +173,7 @@ boby {
 
     &__desc {
         border-left: #000 solid 1px;
-        padding: (25em/16) (10em/16) 0 (50em/16);
+        padding: (25em/16) (10em/16) 0 (30em/16);
     }
 }
 
@@ -189,7 +193,7 @@ boby {
             position: absolute;
             bottom: -45px;
             width: 1px;
-            height: 40px;
+            height: 30px;
             background-color: #000;
         }
 
@@ -211,11 +215,19 @@ boby {
     }
 
     &__term {
-        margin-bottom: (40em/16);
+        margin-bottom: (30em/16);
+
+        @include m-query(tablet) {
+            margin-bottom: (40em/16);
+        }
     }
 
     &__desc {
-        margin-left: (80em/16);
+        margin-left: (30em/16);
         margin-bottom: (80em/16);
+
+        @include m-query(tablet) {
+            margin-left: (80em/16);
+        }
     }
 }

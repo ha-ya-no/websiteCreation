@@ -26,7 +26,12 @@ img {
   flex: 1;
 }
 .header__logo {
-  width: 280px;
+  width: 200px;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 280px;
+  }
 }
 
 /*hamburger*/
@@ -107,7 +112,11 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: 3.125em;
+  margin-left: auto;
 }
 .menu.active .menu__item {
   opacity: 1;

@@ -41,8 +41,13 @@ boby {
   filter: blur(6px);
 }
 .philosophy__title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.875em;
+}
+@media screen and (min-width: 768px) {
+  .philosophy__title {
+    font-size: 2rem;
+  }
 }
 .philosophy__sentence {
   font-size: 1rem;
@@ -111,7 +116,7 @@ boby {
   letter-spacing: 0.2em;
   margin-bottom: 2.5em;
 }
-.activities__list {
+.activities__item {
   margin-bottom: 0.9375em;
 }
 
@@ -129,7 +134,7 @@ boby {
 }
 .summary__desc {
   border-left: #000 solid 1px;
-  padding: 1.5625em 0.625em 0 3.125em;
+  padding: 1.5625em 0.625em 0 1.875em;
 }
 
 .question {
@@ -150,7 +155,7 @@ boby {
   position: absolute;
   bottom: -45px;
   width: 1px;
-  height: 40px;
+  height: 30px;
   background-color: #000;
 }
 .question__title::before {
@@ -167,10 +172,20 @@ boby {
   padding: 8.75em 0 7.5em;
 }
 .question__term {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.875em;
+}
+@media screen and (min-width: 768px) {
+  .question__term {
+    margin-bottom: 2.5em;
+  }
 }
 .question__desc {
-  margin-left: 5em;
+  margin-left: 1.875em;
   margin-bottom: 5em;
+}
+@media screen and (min-width: 768px) {
+  .question__desc {
+    margin-left: 5em;
+  }
 }
 /*# sourceMappingURL=company.css.map */

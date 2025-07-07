@@ -56,7 +56,11 @@ img {
 }
 
 &__logo {
-    width: 280px;
+    width: 200px;
+
+    @include m-query(tablet) {
+        width: 280px;
+    }
 }
 }
 
@@ -140,7 +144,9 @@ img {
 
     &__link {
         @include m-flex();
+        width: fit-content;
         margin-top: (50em/16);
+        margin-left: auto;
     }
 
     &.active .menu__item {
@@ -172,7 +178,7 @@ img {
         }
 
         &:nth-child(7) {
-            transition-delay: .8s;
+            transition-delay: 0.8s;
         }
     }
 }
