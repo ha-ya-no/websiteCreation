@@ -46,10 +46,18 @@ boby {
     &__text {
         line-height: 2;
         position: relative;
-        padding: 120px 100px;
+        padding: (120em/16) (30em/16);
         color: #fff;
         overflow: hidden;
         z-index: 1;
+
+        @include m-query(tablet) {
+            padding: (120em/16) (50em/16);
+        }
+
+        @include m-query(desktop) {
+            padding: (120em/16) (100em/16);
+        }
 
         &::before {
             content: "";
@@ -97,9 +105,17 @@ boby {
 /*office
 -------------------------*/
 .office {
-    width: 50%;
+    width: 90%;
     margin-left: auto;
     padding: (160em/16) 0 (330em/16);
+
+    @include m-query(tablet) {
+        width: 70%;
+    }
+
+    @include m-query(desktop) {
+        width: 50%;
+    }
 
     &__title {
         display: block;
@@ -144,16 +160,16 @@ boby {
 
     &__list {
         display: grid;
-        grid-template-columns: 115px 1fr;
+        grid-template-columns: 90px 1fr;
     }
 
     &__term {
-        padding: 25px 50px 25px 0;
+        padding: 25px 10px 25px 0;
     }
 
     &__desc {
         border-left: #000 solid 1px;
-        padding: 25px 50px;
+        padding: (25em/16) (10em/16) 0 (50em/16);
     }
 }
 
@@ -161,14 +177,37 @@ boby {
     @include m-inner();
 
     &__title {
+        position: relative;
         font-size: f-rem(26);
         text-align: center;
         border-bottom: #000 solid 1px;
         padding-bottom: (30em/26);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -45px;
+            width: 1px;
+            height: 40px;
+            background-color: #000;
+        }
+
+        &::before {
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            transform-origin: center bottom;
+        }
+
+        &::after {
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            transform-origin: center bottom;
+        }
     }
 
     &__list {
-        padding: (110em/16) 0 (120em/16);
+        padding: (140em/16) 0 (120em/16);
     }
 
     &__term {
@@ -176,6 +215,7 @@ boby {
     }
 
     &__desc {
+        margin-left: (80em/16);
         margin-bottom: (80em/16);
     }
 }
