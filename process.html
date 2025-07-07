@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>process</title>
+    <title>PROCESS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="../uemurasan/css/process.css">
     <link rel="stylesheet" href="../uemurasan/css/style.min.css">
@@ -45,9 +45,18 @@
 
     <h2 class="main__h2">process</h2>
 
+    <ul class="process__list">
+        <li class="process__item"><a href="#process01">01 相談</a></li>
+        <li class="process__item"><a href="#process02">02 プラン作成</a></li>
+        <li class="process__item"><a href="#process03">03 基本設計</a></li>
+        <li class="process__item"><a href="#process04">04 実施設計</a></li>
+        <li class="process__item"><a href="#process05">05 施工業者選定</a></li>
+        <li class="process__item"><a href="#process06">06 施工管理</a></li>
+        <li class="process__item"><a href="#process07">07 アフターケア</a></li>
+    </ul>
 
 <section class="process">
-        <article class="process__flow">
+        <article class="process__flow" id="process01">
             <p class="process__num">01</p>
             <h3 class="process__mobileTitle">相談</h3>
                 <div class="process__pic">
@@ -63,8 +72,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process02">
             <p class="process__num">02</p>
             <h3 class="process__mobileTitle">プラン作成</h3>
                 <div class="process__pic">
@@ -80,8 +88,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process03">
             <p class="process__num">03</p>
             <h3 class="process__mobileTitle">基本設計</h3>
                 <div class="process__pic">
@@ -96,8 +103,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process04">
             <p class="process__num">04</p>
             <h3 class="process__mobileTitle">実施設計</h3>
                 <div class="process__pic">
@@ -112,8 +118,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process05">
             <p class="process__num">05</p>
             <h3 class="process__mobileTitle">施工業者選定</h3>
                 <div class="process__pic">
@@ -129,8 +134,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process06">
             <p class="process__num">06</p>
             <h3 class="process__mobileTitle">施工管理</h3>
                 <div class="process__pic">
@@ -146,8 +150,7 @@
                 </div>
             </article>
 
-
-        <article class="process__flow">
+        <article class="process__flow" id="process07">
             <p class="process__num">07</p>
             <h3 class="process__mobileTitle">アフターケア</h3>
                 <div class="process__pic">
@@ -191,6 +194,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- <script>
+$(function(){
+  // #で始まるアンカーをクリックした場合に処理
+  $('.s_ a[href^="#"]').click(function(){
+    // 移動先を0px調整する。0を30にすると30px下にずらすことができる。
+    var adjust = 0;
+    // スクロールの速度
+    var speed = 400; // ミリ秒
+    // アンカーの値取得
+    var href= $(this).attr("href");
+    // 移動先を取得
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を調整
+    var position = target.offset().top + adjust;
+    // スムーススクロール
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+});
+    </script> -->
 
     <script src="../uemurasan/script.js"></script>
 </body>
