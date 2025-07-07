@@ -1,5 +1,9 @@
 /*mixin
 -------------------------*/
+boby {
+  font-size: 0.875rem;
+}
+
 /*philosophy
 -------------------------*/
 .philosophy {
@@ -54,4 +58,79 @@
 
 /*office
 -------------------------*/
+.office {
+  width: 50%;
+  margin-left: auto;
+  padding: 10em 0 20.625em;
+}
+.office__title {
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 3.125em;
+}
+.office__title::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background-color: #333;
+  top: 50%;
+  right: -110px;
+}
+
+.activities {
+  margin-bottom: 6.875em;
+}
+.activities__title {
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 2.5em;
+}
+.activities__list {
+  margin-bottom: 0.9375em;
+}
+
+.summary__title {
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 2.5em;
+}
+.summary__list {
+  display: grid;
+  grid-template-columns: 115px 1fr;
+}
+.summary__term {
+  padding: 25px 50px 25px 0;
+}
+.summary__desc {
+  border-left: #000 solid 1px;
+  padding: 25px 50px;
+}
+
+.question {
+  width: 93.0555555556%;
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question__title {
+  font-size: 1.625rem;
+  text-align: center;
+  border-bottom: #000 solid 1px;
+  padding-bottom: 1.1538461538em;
+}
+.question__list {
+  padding: 6.875em 0 7.5em;
+}
+.question__term {
+  margin-bottom: 2.5em;
+}
+.question__desc {
+  margin-bottom: 5em;
+}
 /*# sourceMappingURL=company.css.map */

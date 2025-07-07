@@ -32,6 +32,11 @@ $breakpoints: (
     @return ($value/16)+rem;
 }
 
+boby {
+    font-size: f-rem(14
+    );
+}
+
 /*philosophy
 -------------------------*/
 .philosophy {
@@ -52,25 +57,24 @@ $breakpoints: (
             inset: 0;
             background: url(../img/rinenBg.png) no-repeat center center / cover;
             transition: filter 1s ease;
-            filter: blur(0px
-            );
-        z-index: -1;
+            filter: blur(0px);
+            z-index: -1;
+        }
+
+        &.scrolled::before {
+            filter: blur(6px);
+        }
     }
 
-    &.scrolled::before {
-        filter: blur(6px);
+    &__title {
+        font-size: f-rem(32);
+        margin-bottom: (60em/32);
     }
-}
 
-&__title {
-    font-size: f-rem(32);
-    margin-bottom: (60em/32);
-}
-
-&__sentence {
-    font-size: f-rem(16);
-    margin-bottom: (50em/16);
-}
+    &__sentence {
+        font-size: f-rem(16);
+        margin-bottom: (50em/16);
+    }
 }
 
 .philosophy__text.scrolled::before {
@@ -92,4 +96,86 @@ $breakpoints: (
 
 /*office
 -------------------------*/
-.office {}
+.office {
+    width: 50%;
+    margin-left: auto;
+    padding: (160em/16) 0 (330em/16);
+
+    &__title {
+        display: block;
+        position: relative;
+        font-size: f-rem(32);
+        letter-spacing: 0.2em;
+        width: fit-content;
+        margin-bottom: (100em/32);
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            background-color: #333;
+            top: 50%;
+            right: -110px;
+        }
+    }
+}
+
+.activities {
+    margin-bottom: (110em/16);
+
+    &__title {
+        font-size: f-rem(20);
+        letter-spacing: 0.2em;
+        margin-bottom: (50em/20);
+    }
+
+    &__list {
+        margin-bottom: (15em/16);
+    }
+}
+
+.summary {
+    &__title {
+        font-size: f-rem(20);
+        letter-spacing: 0.2em;
+        margin-bottom: (50em/20);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 115px 1fr;
+    }
+
+    &__term {
+        padding: 25px 50px 25px 0;
+    }
+
+    &__desc {
+        border-left: #000 solid 1px;
+        padding: 25px 50px;
+    }
+}
+
+.question {
+    @include m-inner();
+
+    &__title {
+        font-size: f-rem(26);
+        text-align: center;
+        border-bottom: #000 solid 1px;
+        padding-bottom: (30em/26);
+    }
+
+    &__list {
+        padding: (110em/16) 0 (120em/16);
+    }
+
+    &__term {
+        margin-bottom: (40em/16);
+    }
+
+    &__desc {
+        margin-bottom: (80em/16);
+    }
+}
