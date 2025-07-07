@@ -1,23 +1,124 @@
+/*mixin
+-------------------------*/
+body {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .profile .box {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-end;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile .boxs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.profile .abouttwo {
+  width: 50%;
+  padding-bottom: 4.375em;
+}
+.profile .boxone {
+  width: 70%;
 }
 .profile .about {
   position: relative;
+  width: 50%;
 }
 .profile .about__img {
-  width: 60%;
   height: auto;
+  width: 90%;
 }
 .profile .about__label {
   position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.2rem;
+  top: 4.375em;
+  left: 1.25em;
+  font-size: 1.125rem;
   transform: rotate(90deg);
 }
+.profile .about__container {
+  position: absolute;
+  bottom: 4.375em;
+  left: 18.75em;
+}
 .profile .about__name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 0.625em;
+}
+.profile .career {
+  padding-bottom: 6.25em;
+  padding-top: 0em;
+}
+.profile .career__list {
+  border-left: 1px solid black;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  row-gap: 0.5em;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+}
+.profile .career__list dt {
+  padding-left: 2.5em;
+  white-space: nowrap;
+}
+.profile .career__list dd {
+  margin: 0;
+}
+.profile .awards__list {
+  list-style: none;
+  padding-left: 0;
+}
+.profile .awards__list li {
+  padding-bottom: 0.625em;
+}
+
+.profiles {
+  margin-bottom: 12.5em;
+  padding-top: 9.375em;
+  width: 40%;
+  align-items: center;
+}
+.profiles__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.profiles .about {
+  position: relative;
+}
+.profiles .about__label {
+  position: absolute;
+  top: 3.75em;
+  left: 0.625em;
+  font-size: 1.125rem;
+  transform: rotate(90deg);
+}
+.profiles .about__container {
+  position: absolute;
+  bottom: 2.5em;
+  left: 15.625em;
+}
+.profiles .about__name {
+  font-size: 2rem;
+  margin-bottom: 0.625em;
+}
+.profiles .about__img {
+  width: 80%;
+}
+.profiles ul {
+  list-style: none;
+  padding-left: 0;
+}
+.profiles ul li {
+  padding-bottom: 0.625em;
 }
 /*# sourceMappingURL=members.css.map */
