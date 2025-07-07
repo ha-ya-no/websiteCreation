@@ -32,8 +32,8 @@ $breakpoints: (
     @return ($value/16)+rem;
 }
 
-body{
-    width: 80%;
+main{
+width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -41,61 +41,114 @@ body{
 // profile
 
 .profile{
-      @include m-query(desktop);
 
     //about
     .box{
+
+
+
+@include m-query(desktop){
         @include m-flex(flex-end);
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
+}
     }
 
 
     .boxs{
-        @include m-flex( );
-        flex-wrap: nowrap;
+display: block;
+font-size: f-rem(14);
+        @include m-query(desktop){
+            @include m-flex( );
+            flex-wrap: nowrap;
+
+        }
 
     }
 
 
     .abouttwo{
-    width: 50%;
-    padding-bottom: (70em/16);
+width: 100%;
+
+        @include m-query(desktop){
+            width: 50%;
+            padding-bottom: (70em/16);
+
+        }
     }
 
     .boxone{
-        width: 70%;
+        width: 60%;
     }
 
 
 
     .about{
-        position: relative;
-        width: 50%;
+width: 100%;
+
+        @include m-query(desktop){
+            position: relative;
+            width: 50%;
+
+        }
         &__img{
             height: auto;
             width: 90%;
         }
 
         &__label{
-            position: absolute;
-            top: (70em/16);
-            left: (20em/16);
-            font-size: f-rem(18);
-            transform: rotate(90deg);
+                position: absolute;
+                top: (200em/16);
+                transform: rotate(90deg);
+                font-size: f-rem(16);
+            @include m-query(desktop){
+
+                top: (70em/16);
+                left: (20em/16);
+                font-size: f-rem(18);
+
+
+            }
         }
 
         &__container{
             position: absolute;
-            bottom: (70em/16);
-            left: (300em/16);
+            bottom: (230em/16);
+            left: (230em/16);
+
+            @include m-query(desktop){
+                bottom: (70em/16);
+                left: (300em/16);
+
+            }
 
         }
 
+        &__comment{
+
+
+            padding-bottom: (100em/16);
+
+            @include m-query(desktop){
+                padding-bottom: 0;
+            }
+        }
+
+
+        &__occupation{
+            font-size: f-rem(14);
+        }
+
         &__name{
-            font-size: f-rem(28);
-            margin-bottom: (10em/16);
+                font-size: f-rem(22);
+                margin-bottom: (2em/16);
+
+            @include m-query(desktop){
+                font-size: f-rem(28);
+                margin-bottom: (10em/16);
+
+            }
         }
     }
 
@@ -103,6 +156,11 @@ body{
     .career{
     padding-bottom: (100em/16);
     padding-top: (0em/16);
+
+    &__title{
+        padding-bottom: (20em/16);
+
+    }
 
         &__list{
 
@@ -127,9 +185,18 @@ body{
 
     //awards
     .awards{
+&__title{
+    padding-bottom: (20em/16);
+}
+
         &__list{
             list-style: none;
-            padding-left: 0;
+padding-bottom: (80em/16);
+
+            @include m-query(desktop){
+                padding-left: 0;
+
+            }
 
             li{
                 padding-bottom:(10em/16);
@@ -142,12 +209,25 @@ body{
 
 //profiles
     .profiles{
-          margin-bottom: (200em/16);
-        padding-top: (150em/16);
-        width: 40%;
-        align-items: center;
+padding-bottom: (50em/16);
+width: 100%;
+        @include m-query(desktop){
+
+            margin-bottom: (200em/16);
+            padding-top: (150em/16);
+            width: 40%;
+            align-items: center;
+        }
+
     &__container{
-        @include m-flex( );
+        display: block;
+        width: 90%;
+          margin-left: auto;
+        margin-right: auto;
+           @include m-query(desktop){
+               @include m-flex( );
+
+           }
     }
 
 
@@ -158,27 +238,55 @@ body{
 
     &__label{
             position: absolute;
-            top: (60em/16);
-            left: (10em/16);
-            font-size: f-rem(18);
+            top: (45em/16);
+            left: (0em/16);
             transform: rotate(90deg);
+
+
+            @include m-query(desktop){
+                top: (60em/16);
+                left: (10em/16);
+                font-size: f-rem(18);
+
+            }
         }
 
         &__container{
             position: absolute;
-            bottom: (40em/16);
-            left: (250em/16);
+              bottom: (47em/16);
+                left: (190em/16);
+
+
+            @include m-query(desktop){
+                bottom: (40em/16);
+                left: (250em/16);
+
+            }
 
         }
 
         &__name{
-            font-size: f-rem(32);
-            margin-bottom: (10em/16);
+            font-size: f-rem(22);
+
+
+            @include m-query(desktop){
+                font-size: f-rem(32);
+
+
+            }
+        }
+
+        &__occupation{
+            font-size: f-rem(14);
         }
 
         &__img{
             width: 80%;
         }
+
+        &__comment{
+
+            margin-top: (20em/16);
 
         }
 
@@ -193,3 +301,4 @@ body{
         }
 
 }
+    }
