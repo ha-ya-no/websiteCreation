@@ -52,38 +52,30 @@
   }
   .span__scroll {
     padding-top: 3.4375rem;
-    -webkit-animation: scroll 2s infinite;
-            animation: scroll 2s infinite;
   }
   .half__black__filter {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50vw;
-    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
   /*　スクロールダウンの実装
   ------*/
-  .scroll {
-    padding-left: 15%;
-    position: absolute;
-    bottom: -250px;
-    transform: translateX(-50%);
-    padding-top: 0;
+  .span__scroll {
+    position: relative;
   }
-  .scroll::before {
+  .span__scroll::before {
+    content: "";
     position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100px;
+    background: #fff;
     -webkit-animation: scroll 2s infinite;
             animation: scroll 2s infinite;
-    background-color: #fff;
-    top: -115px;
-    right: 30px;
-    content: "";
-    height: 100px;
-    margin: auto;
-    width: 1px;
+    transform: translateX(-50%);
   }
   @-webkit-keyframes scroll {
     0% {
