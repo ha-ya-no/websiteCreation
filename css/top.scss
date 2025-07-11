@@ -86,36 +86,39 @@ $breakpoints: (
         text-decoration: underline;
     }
     &__scroll{
-        padding-top: f-rem(55);
+
+        padding-top: f-rem(170);
+        margin-left: f-rem(120);
     }
 }
 .half__black__filter {
     position: absolute;
     top: 0;
     left: 0;
-    // width: 50vw;
-    // height: 100vh;
+    width: 50vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 /*　スクロールダウンの実装
-------*/
+------------------------------*/
 .span__scroll {
     position: relative;
 
     &::before {
         content: "";
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 1px;
-            height: 100px;
-            background: #fff;
-            animation: scroll 2s infinite;
-            transform: translateX(-50%);
+        position: absolute;
+        left: 25px;
+        top: 50px;
+        width: 1px;
+        height: 100px;
+        background: #fff;
+        animation: scroll 2s infinite;
+        transform: translateX(-50%);
+    }
 }
-}
+
 
 @keyframes scroll {
     0% {
@@ -138,18 +141,98 @@ $breakpoints: (
         transform-origin: 0 100%;
     } }
 
+/*　スクロールダウンの実装ここまで！！！！
+------------------------------*/
 
- $footer-border: #ddd;
-     $footer-copy-color: #555;
+/* こっからわーくす！！！！
+------------------------------*/
+.works {
+  padding-top: f-rem(225);
+  padding-left: 10%;
 
-    .footer {
-        border-top: 1px solid $footer-border;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        padding: 4.7em 6.2em; // 75px, 99px
+  &__title {
+    font-size: f-rem(30);
+    margin-bottom: 0.5em;
+  }
 
+  &__tag {
+    padding-top: f-rem(45);
+    padding-bottom: f-rem(115);
+    display: flex;
+    flex-wrap: wrap;
+    gap: f-rem(20);
+
+    &-link {
+      padding-right: f-rem(45);
+      font-size: f-rem(14);
+      color: #333;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__posts {
+    display: flex;
+    gap: f-rem(20);
+    flex-wrap: wrap;
+  }
+
+  &__post {
+    width: f-rem(300);
+    padding-bottom: f-rem(80);
+    background: #fff;
+    border-radius: 0.5em;
+
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h2 {
+      padding-top: f-rem(20);
+      font-size: f-rem(14);
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: f-rem(10);
+      color: #888;
+    }
+  }
+
+  &__img {
+    width: f-rem(230);
+    height: f-rem(330);
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+/* こっからわーくすおわり！！！！
+------------------------------*/
+
+
+$footer-border: #ddd;
+$footer-copy-color: #555;
+
+.footer {
+    border-top: 1px solid $footer-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2.5em 1.25em; // 40px, 20px
         &__address {
             flex: 1;
             min-width: 13.75em; // 220px/16
