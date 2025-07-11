@@ -1,5 +1,4 @@
-/*mixin
--------------------------*/
+/* Mixin */
 body {
   font-size: 1rem;
   letter-spacing: 0.25em;
@@ -17,21 +16,65 @@ body {
   margin-right: auto;
 }
 
-.process__list {
-  margin-top: 0.625em;
-  padding: 1.25em;
-  line-height: 2;
-  border-left: #000000 1px solid;
+.process {
+  position: relative;
 }
-.process__item:hover {
-  font-weight: bold;
+.process__line {
+  display: none;
+}
+@media screen and (min-width: 960px) {
+  .process__line {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 19%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
 }
 .process__flow {
+  position: relative;
   padding: 3.125em 0;
   scroll-behavior: smooth;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 1;
+}
+.process__flow:nth-of-type(odd) {
+  transform: translateX(40px);
+}
+@media screen and (min-width: 960px) {
+  .process__flow:nth-of-type(odd) {
+    transform: none;
+  }
+}
+.process__flow:nth-of-type(even) {
+  transform: translateX(-40px);
+}
+@media screen and (min-width: 960px) {
+  .process__flow:nth-of-type(even) {
+    transform: none;
+  }
+}
+.process__flow.is-visible {
+  opacity: 1;
+}
+@media screen and (min-width: 390px) {
+  .process__flow.is-visible {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 960px) {
+  .process__flow.is-visible {
+    transform: none;
+  }
 }
 @media screen and (min-width: 960px) {
   .process__flow {
+    opacity: 1;
     display: flex;
     justify-content: space-between;
   }
@@ -41,14 +84,12 @@ body {
   font-size: 5rem;
   font-weight: bold;
   position: relative;
-  left: 0;
   line-height: 1;
   color: #e7e7e7;
 }
 @media screen and (min-width: 960px) {
   .process__num {
     font-size: 9.375rem;
-    font-weight: bold;
     transform: rotate(90deg);
     width: 10%;
     margin-left: -1.2em;
@@ -73,6 +114,8 @@ body {
   border: 1px rgba(0, 0, 0, 0.3) solid;
   background-color: #fff;
   aspect-ratio: 1/1;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .process__pic {
@@ -83,6 +126,7 @@ body {
   .process__pic {
     width: 30%;
     padding: 3.125em;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 960px) {
@@ -96,11 +140,11 @@ body {
 }
 @media screen and (min-width: 960px) {
   .process__title {
+    display: block;
     font-weight: bold;
     font-size: 1.125rem;
     padding-top: 0.5555555556em;
     padding-bottom: 1.1111111111em;
-    display: block;
   }
 }
 .process__explain {
@@ -110,5 +154,14 @@ body {
   .process__explain {
     padding-top: 0;
   }
+}
+.process__list {
+  margin-top: 0.625em;
+  padding: 1.25em;
+  line-height: 2;
+  border-left: #000 1px solid;
+}
+.process__item:hover {
+  font-weight: bold;
 }
 /*# sourceMappingURL=process.css.map */

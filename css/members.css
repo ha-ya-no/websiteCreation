@@ -108,12 +108,26 @@ main {
   padding-bottom: 1.25em;
 }
 .profile .career__list {
-  border-left: 1px solid black;
+  position: relative;
   display: grid;
   grid-template-columns: 100px 1fr;
   row-gap: 0.5em;
   -moz-column-gap: 1em;
        column-gap: 1em;
+  padding-left: 1px;
+}
+.profile .career__list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background-color: black;
+  transition: height 1.2s ease-out;
+}
+.profile .career__list.is-visible::before {
+  height: 100%;
 }
 .profile .career__list dt {
   padding-left: 2.5em;
@@ -121,6 +135,22 @@ main {
 }
 .profile .career__list dd {
   margin: 0;
+}
+@-webkit-keyframes lineGrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes lineGrow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 .profile .awards__title {
   padding-bottom: 1.25em;
