@@ -126,33 +126,6 @@ font-family: Helvetica, Arial, sans-serif;
             width: 10%;
             margin-left: (-120em / 100);
         }
-<<<<<<< HEAD
-=======
-
-
-        &__mobileTitle{
-              font-weight: bold;
-    font-size: f-rem(18);
-    padding-top: (10em/18);
-    padding-bottom: (20em/18);
-    text-align: center;
-            @include m-query(desktop) {
-                display: none;
-            }
-        }
-
-&__pic{
-    padding: (30em/16);
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 1px rgba($color: #000000, $alpha: 0.3) solid;
-    background-color: #fff;
-    aspect-ratio: 1/1;
-    width: 80%;
-
-    @include m-query(tablet) {
-        width: 60%;
->>>>>>> process
     }
 
     &__mobileTitle {
@@ -162,7 +135,6 @@ font-family: Helvetica, Arial, sans-serif;
         padding-bottom: (20em / 18);
         text-align: center;
 
-<<<<<<< HEAD
         @include m-query(desktop) {
             display: none;
         }
@@ -227,12 +199,3 @@ font-family: Helvetica, Arial, sans-serif;
         font-weight: bold;
     }
 }
-=======
-&__explain{
-    padding-top: (20em/16);
-    @include m-query(desktop) {
-    padding-top: 0;
-}
-}
-}
->>>>>>> process
