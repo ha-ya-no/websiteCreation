@@ -115,6 +115,9 @@ main {
   gap: 0.5rem;
   font-size: 0.875rem;
 }
+.form-section__checkbox input {
+  all: revert;
+}
 
 .submit-button {
   width: 100px;
