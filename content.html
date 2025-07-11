@@ -42,10 +42,10 @@
 
     <main>
 
-<div class="content">
+<section class="content">
     <div class="content__top">
         <h2 class="content__title">たいとるたいとる</h2>
-        <p class="content__category">category</p>
+        <a href="#" class="content__category">category</a>
     </div>
 
     <img src="./img/hehehe.jpg" alt="" class="content__thumbnail">
@@ -74,11 +74,11 @@
             </dl>
             <dl class="content__list">
                 <dt class="content__left">constractior : </dt>
-                <dd class="content__right">誠和建設</dd>
+                <dd class="content__right"><a href="#">誠和建設</a></dd>
             </dl>
             <dl class="content__list">
                 <dt class="content__left">photo : </dt>
-                <dd class="content__right">ToLoLo studio</dd>
+                <dd class="content__right"><a href="#">ToLoLo studio</a></dd>
             </dl>
 
         </div>
@@ -86,6 +86,7 @@
     </div>
 
         <div class="content__picture">
+            <!-- クリックしたら一個の画層を大きく表示できるように -->
             <div class="content__flex" >
                 <img src="./img/hehehe02.jpg" alt="" class="content__img" >
                 <img src="./img/mikan.jpg" alt="" class="content__img" >
@@ -112,13 +113,47 @@
                 <img src="./img/hehehe02.jpg" alt="" class="content__img">
             </div>
         </div>
-
-<div class="content__viewmore">
-    <h3 class="content__more">view more</h3>
+</section>
 
 
 
-</div>
+<section class="more">
+    <!-- ラフのvirewmore左の線の付け方がわからんです -->
+    <h3 class="more__title">view more</h3>
+
+    <div class="more_wrapper">
+        <div class="more__flex">
+            <!-- 同じタブの他の作品を＃idで飛べるようにするらしぃ -->
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+            <a class="more__link" href="#">
+                <img class="more__img" src="./img/hehehe02.jpg" alt="">
+                <p class="more__one">かどのいえ</p>
+            </a>
+        </div>
+    </div>
+
+
+
+</section>
     </main>
 
     <footer class="footer">
@@ -144,6 +179,32 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const container = document.querySelector(".more__flex");
+
+          // 複製を作ってループっぽくする
+          const clone = container.innerHTML;
+          container.innerHTML += clone;
+
+          let position = 0;
+          const speed = 0.5; // 速度調整（大きいほど速い）
+
+          function animate() {
+            position += speed;
+            container.style.transform = `translateX(-${position}px)`;
+
+            // 一巡したらリセット
+            if (position >= container.scrollWidth / 2) {
+              position = 0;
+            }
+
+            requestAnimationFrame(animate);
+          }
+
+          animate();
+        });
+        </script>
 
     <script src="../uemurasan/script.js"></script>
 

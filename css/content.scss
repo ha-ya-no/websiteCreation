@@ -64,30 +64,50 @@ font-size: f-rem(14);
 color: #c2c2c2;}
 
 &__thumbnail{
-    width:90%;
-    aspect-ratio: 22/9;
+    width:95%;
+    aspect-ratio: 16/9;
     object-fit: cover;
+    @include m-query(desktop) {
+        width:90%;
+        aspect-ratio: 22/9;
+    }
 }
 
 &__text{
+    @include m-inner;
     font-size: f-rem(14);
+    padding: (80em/16) 0;
+    @include m-query(desktop) {
 display: flex;
 justify-content: space-between;
 padding: (80em/16) 0;
-
-@include m-inner;
+    }
 }
 
 &__explain{
+    width: 95%;
+    padding-bottom: (50em/16);
+    @include m-query(desktop) {
+        padding-bottom: 0;
     width: 45%;
+    }
 }
 
 &__detail{
-width: 25%;}
+    width: 65%;
+    margin-left: auto;
+    @include m-query(desktop) {
+        width: 25%;
+    }
+}
+
 &__list{
     display: flex;
     justify-content: space-between;
 }
+
+&__list dt{
+color: #c2c2c2;}
 
 &__right{
 // text-align: right;
@@ -95,9 +115,13 @@ display: block;
 }
 
 &__picture{
+    display: flex;
     object-fit: cover;
-    width: 90%;
-display: flex;
+    width: 100%;
+        @include m-query(desktop) {
+
+        width: 90%;
+        }
 }
 
 &__flex{
@@ -107,13 +131,70 @@ width: 33.33%;
 margin-bottom: -10px;
 width: 100%;
 }
+}
 
-&__viewmore{
-margin: (50em/16) 0;
-padding: (30em/16) 0;
+.more{
+    width: 85%;
+    margin: (80em/16)0(80em/16)auto;
+    background-color: #ededed;
+    padding:(50em/16) 0px ;
 
-width: 90%;
-margin-left: auto;
+    @include m-query(desktop) {
+        padding:(80em/16) 0px;
+    }
 
+&__title{
+    border-bottom: 1px solid #000;
+    width: 50%;
+    padding-left: (50em/16);
+    margin-bottom: (30em/16);
+
+    @include m-query(desktop) {
+        margin-bottom: (50em/16);
+        width: 25%;
+    }
+}
+
+&__wrapper {
+    width: 85%;
+    margin-left: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+&__flex{
+display: flex;
+flex-wrap: nowrap;
+white-space: nowrap;
+will-change: transform;
+}
+
+&__link{
+padding-right: (10em/16);
+flex: 0 0 auto;
+width: 150px;
+
+@include m-query(desktop) {
+    width: 200px;
+    padding-right: (20em/16);
+}
+}
+
+// ホバーアニメーション何がいいかなー
+&__link:hover{
+   opacity: 0.7;
+   transition: .3s;
+}
+
+&__img{
+    width: 100%;
+    aspect-ratio:2/3;
+    object-fit: cover;
+    // display: block;
+    // margin-bottom: (30em/16);
+}
+
+&__one{
+    font-size: f-rem(14);
 }
 }
