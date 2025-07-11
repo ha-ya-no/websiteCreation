@@ -28,30 +28,218 @@ $breakpoints: (
 }
 
 @function f-rem($value) {
-    @return ($value/16)+rem;
+    @return ($value/16) * 1rem;
 }
 
 @include m-query(desktop){
+    .body{
+        color: #000;
+    }
+
+.span {
+        background-image: url("../img/hehehe.jpg");
+        background-size: cover;
+        background-position: center;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        color: #fff;
+
+        &__nav{
+            position: relative;
+            z-index: 2;
+            padding-top: 23.75em;
+            padding-left: 13.75em;
+
+         h1{
+            font-size: f-rem(35);
+            padding-top:(40em/35);//40px
+            }
+          p{
+            font-size: f-rem(12);
+          }
+    }
+
+    &__namber{
+        display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 18px;
+            margin-top: (45em/18);//45px
+    }
+
+    &__line{
+        width: 100px;
+        height: 1px;
+        background-color: #fff;
+        display: inline-block;
+    }
+
+    &__Category{
+        padding-top: f-rem(35);
+        align-items: center;
+        gap: 135px;
+    }
+    &__more{
+        padding-top: f-rem(55);
+        text-decoration: underline;
+    }
+    &__scroll{
+
+        padding-top: f-rem(170);
+        margin-left: f-rem(120);
+    }
+}
+.half__black__filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/*　スクロールダウンの実装
+------------------------------*/
+.span__scroll {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 25px;
+        top: 50px;
+        width: 1px;
+        height: 100px;
+        background: #fff;
+        animation: scroll 2s infinite;
+        transform: translateX(-50%);
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+
+    51% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    } }
+
+/*　スクロールダウンの実装ここまで！！！！
+------------------------------*/
+
+/* こっからわーくす！！！！
+------------------------------*/
+.works {
+  padding-top: f-rem(225);
+  padding-left: 10%;
+
+  &__title {
+    font-size: f-rem(30);
+    margin-bottom: 0.5em;
+  }
+
+  &__tag {
+    padding-top: f-rem(45);
+    padding-bottom: f-rem(115);
+    display: flex;
+    flex-wrap: wrap;
+    gap: f-rem(20);
+
+    &-link {
+      padding-right: f-rem(45);
+      font-size: f-rem(14);
+      color: #333;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__posts {
+    display: flex;
+    gap: f-rem(20);
+    flex-wrap: wrap;
+  }
+
+  &__post {
+    width: f-rem(300);
+    padding-bottom: f-rem(80);
+    background: #fff;
+    border-radius: 0.5em;
+
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h2 {
+      padding-top: f-rem(20);
+      font-size: f-rem(14);
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: f-rem(10);
+      color: #888;
+    }
+  }
+
+  &__img {
+    width: f-rem(230);
+    height: f-rem(330);
+    overflow: hidden;
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+/* こっからわーくすおわり！！！！
+------------------------------*/
+
 
 $footer-border: #ddd;
-    $footer-copy-color: #555;
+$footer-copy-color: #555;
 
-    .footer {
-        border-top: 1px solid $footer-border;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        padding: 2.5em 1.25em; // 40px, 20px
-
+.footer {
+    border-top: 1px solid $footer-border;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2.5em 1.25em; // 40px, 20px
         &__address {
             flex: 1;
             min-width: 13.75em; // 220px/16
             font-size: f-rem(16);
+            padding-top: 3.9em; //137 - 75px/16
+            // padding-left: 6.9em; //110px/16
 
-            // &-text {
-            //     // 住所テキスト用
-            // }
 
             &-line {
                 margin: 0 0 0.5em 0; // 8px/16
@@ -78,7 +266,7 @@ $footer-border: #ddd;
             }
 
             &-item {
-                margin-bottom: 0.3125em; // 5px/16
+                margin-bottom: (5/16); // 5px/16
             }
 
             &-link {
@@ -97,7 +285,7 @@ $footer-border: #ddd;
         &__copy {
             font-size: f-rem(12);
             color: $footer-copy-color;
-            margin-top: 0.625em; // 10px/16
+            margin-top: (10/12); // 10px
             }
     }
 }
