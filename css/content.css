@@ -124,6 +124,7 @@ body {
   position: relative;
 }
 .more__flex {
+  width: 85%;
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
