@@ -128,21 +128,21 @@
     font-size: 1.875rem;
     margin-bottom: 0.5em;
   }
-  .works__tag {
+  .works__tag-all {
     padding-top: 2.8125rem;
     padding-bottom: 7.1875rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
   }
-  .works__tag-link {
+  .works__tag-all-link {
     padding-right: 2.8125rem;
     font-size: 0.875rem;
     color: #333;
     text-decoration: none;
     transition: opacity 0.2s;
   }
-  .works__tag-link:hover {
+  .works__tag-all-link:hover {
     opacity: 0.7;
   }
   .works__posts {

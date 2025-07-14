@@ -16,6 +16,24 @@ document.addEventListener('click', (e) => {
     }
 });
 
+//topのホバーアニメーション
+const cards = document.querySelectorAll('.works__tag');
+
+cards.forEach(card => {
+  const title = card.querySelector('.works__tag-link');
+  const originalText = title.textContent;
+
+  card.addEventListener('mouseenter', () => {
+    if (!title.textContent.startsWith('「')) {
+      title.textContent = `『${originalText}』`;
+    }
+  });
+
+  card.addEventListener('mouseleave', () => {
+    title.textContent = originalText;
+  });
+});
+
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
     const philosophyText = document.querySelector('.philosophy-text');
