@@ -16,7 +16,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-//topのホバーアニメーション
+/*topのタグホバーアニメーション
+------------------------------*/
 const cards = document.querySelectorAll('.works__tag');
 
 cards.forEach(card => {

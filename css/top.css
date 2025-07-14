@@ -133,6 +133,8 @@
     padding-bottom: 7.1875rem;
     display: flex;
     flex-wrap: wrap;
+    min-width: 8em;
+    text-align: center;
     gap: 1.25rem;
   }
   .works__tag-all-link {
@@ -183,6 +185,13 @@
     -o-object-fit: cover;
        object-fit: cover;
     display: block;
+    /*モノクロのやつ
+    ------------------------------*/
+    filter: grayscale(100%);
+  }
+  .works__img :hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
   }
   /* こっからわーくすおわり！！！！
   ------------------------------*/
@@ -192,7 +201,7 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2.5em 1.25em;
+    padding: 2.5em 3.75em;
   }
   .footer__address {
     flex: 1;

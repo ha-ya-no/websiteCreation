@@ -160,6 +160,8 @@ $breakpoints: (
     padding-bottom: f-rem(115);
     display: flex;
     flex-wrap: wrap;
+    min-width: 8em;
+    text-align: center;
     gap: f-rem(20);
 
     &-link {
@@ -211,11 +213,20 @@ $breakpoints: (
     display: block;
     position: relative;
 
+
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+    /*モノクロのやつ
+    ------------------------------*/
+      filter: grayscale(100%);
+    }
+    :hover{
+        filter: grayscale(0%);
+        transition: 0.2s;
     }
   }
 }
@@ -232,7 +243,7 @@ $footer-copy-color: #555;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2.5em 1.25em; // 40px, 20px
+    padding: 2.5em 3.75em; // 40px, 60px
         &__address {
             flex: 1;
             min-width: 13.75em; // 220px/16
