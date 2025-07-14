@@ -6,6 +6,12 @@ main {
   margin-right: auto;
 }
 
+body {
+  background-image: url(../img/mokume.webp);
+  background-position: 20% 20%;
+  background-repeat: no-repeat;
+}
+
 @media screen and (min-width: 960px) {
   .profile .box {
     display: flex;
