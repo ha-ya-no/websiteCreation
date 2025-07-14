@@ -45,8 +45,6 @@ main {
     //about
     .box {
 
-
-
         @include m-query(desktop) {
             @include m-flex(flex-end
         );
@@ -173,7 +171,6 @@ main {
 
         //            dt {
         //   padding-left: (40em/16);
-
         //     white-space: nowrap;
         //   }
 
@@ -236,7 +233,6 @@ main {
 
         @include m-query(desktop) {
             padding-left: 0;
-
         }
 
         li {
@@ -267,6 +263,7 @@ main {
         margin-left: auto;
         margin-right: auto;
 
+
         @include m-query(desktop) {
             @include m-flex();
 
@@ -278,13 +275,11 @@ main {
     .about {
         position: relative;
 
-
         &__label {
             position: absolute;
             top: (45em/16);
             left: (0em/16);
             transform: rotate(90deg);
-
 
             @include m-query(desktop) {
                 top: (60em/16);
@@ -299,23 +294,17 @@ main {
             bottom: (47em/16);
             left: (190em/16);
 
-
             @include m-query(desktop) {
                 bottom: (40em/16);
                 left: (250em/16);
-
             }
-
         }
 
         &__name {
             font-size: f-rem(22);
 
-
             @include m-query(desktop) {
                 font-size: f-rem(32);
-
-
             }
         }
 
@@ -328,9 +317,7 @@ main {
         }
 
         &__comment {
-
             margin-top: (20em/16);
-
         }
 
 
