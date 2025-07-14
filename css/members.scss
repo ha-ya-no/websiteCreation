@@ -85,7 +85,6 @@ main {
 }
 
 
-
 .about {
     width: 100%;
 
@@ -124,9 +123,7 @@ main {
         @include m-query(desktop) {
             bottom: (70em/16);
             left: (300em/16);
-
         }
-
     }
 
     &__comment {
