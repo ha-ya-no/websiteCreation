@@ -101,6 +101,10 @@ img {
   transition: opacity 0.5s ease, transform 0.5s ease;
   margin-bottom: 1.25em;
 }
+.menu__item span {
+  color: #5a5655;
+  font-size: 0.875rem;
+}
 .menu__inst {
   width: 35px;
 }
@@ -111,12 +115,21 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 3.125em;
   margin-left: auto;
+}
+.menu__username {
+  margin-left: 30px;
+}
+.menu__username a {
+  display: block;
+}
+.menu__username a:nth-child(1) {
+  margin-bottom: 0.625em;
 }
 .menu.active .menu__item {
   opacity: 1;
@@ -144,8 +157,6 @@ img {
   transition-delay: 0.8s;
 }
 
-/*footer
--------------------------*/
 .footer {
   border-top: 1px solid #ddd;
   display: flex;

@@ -41,7 +41,15 @@ boby {
 -------------------------*/
 .philosophy {
     width: 100%;
-    display: flex;
+    // display: flex;
+
+    @include m-query(tablet) {
+        width: 90%;
+    }
+
+    @include m-query(desktop) {
+        width: 80%;
+    }
 
     &__text {
         line-height: 2;

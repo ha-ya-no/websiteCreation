@@ -132,6 +132,11 @@ img {
         transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
         margin-bottom: (20em/16);
+
+        span {
+            color: #5a5655;
+            font-size: f-rem(14);
+        }
     }
 
     &__inst {
@@ -143,10 +148,22 @@ img {
     }
 
     &__link {
-        @include m-flex();
+        @include m-flex(flex-start);
         width: fit-content;
         margin-top: (50em/16);
         margin-left: auto;
+    }
+
+    &__username {
+        margin-left: 30px;
+
+        a {
+            display: block;
+
+            &:nth-child(1) {
+                margin-bottom: (10em/16);
+            }
+        }
     }
 
     &.active .menu__item {
@@ -183,66 +200,20 @@ img {
     }
 }
 
-/*footer
--------------------------*/
-// .footer {
-//     border-top: 1px solid $footer-border;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     flex-wrap: wrap;
-//     padding: 2.5em 1.25em; // 40px, 20px
+// .menu__username {
+//     margin-left: 30px;
 
-//     &__address {
-//         flex: 1;
-//         min-width: 13.75em;
-//         font-size: f-rem(16);
+//     a {
+//         display: block;
 
-//         &-line {
-//             margin: 0 0 0.5em 0; // 8px/16
+//         span {
+//             color: #5a5655;
 //             font-size: f-rem(14);
 //         }
-//     }
 
-//     &__right {
-//         flex: 1;
-//         min-width: 13.75em;
-//         line-height: 1.8;
-//         text-align: right;
-//         font-size: f-rem(16);
-//     }
-
-//     &__nav {
-//         &-list {
-//             list-style: none;
-//             padding: 0;
-//             margin: 0 0 0.625em 0; // 10px/16
-//             display: flex;
-//             flex-direction: column;
-//             align-items: flex-end;
+//         &:nth-child(1) {
+//             margin-bottom: (10em/16);
 //         }
-
-//         &-item {
-//             margin-bottom: 0.3125em; // 5px/16
-//         }
-
-//         &-link {
-//             letter-spacing: 0.1em;
-//             text-decoration: none;
-//             color: inherit;
-//             font-size: f-rem(14);
-//             transition: opacity 0.2s;
-
-//             &:hover {
-//                 opacity: 0.7;
-//             }
-//         }
-//     }
-
-//     &__copy {
-//         font-size: f-rem(12);
-//         color: $footer-copy-color;
-//         margin-top: 0.625em; // 10px/16
 //     }
 // }
 
