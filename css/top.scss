@@ -170,15 +170,32 @@ $breakpoints: (
             box-sizing: border-box;
             transition: opacity 0.2s;
             position: relative;
+            padding: 0 1em;
 
-            .bracket {
-                opacity: 0;
-                transition: opacity 0.2s;
+            &:not(.works__tag-current):hover::before{
+                content: "『";
+                position: absolute;
+                left: 0;
+                top: 0;
             }
-            &:hover .bracket {
-                opacity: 1;
+
+            &:not(.works__tag-current):hover::after{
+                content: "』";
+                position: absolute;
+                right: 0;
+                top: 0;
             }
         }
+    }
+
+    .works__tag-current{
+        &::before {
+                content: "「";
+            }
+
+            &::after {
+                content: "」";
+            }
     }
 
   &__posts {

@@ -143,13 +143,25 @@
     box-sizing: border-box;
     transition: opacity 0.2s;
     position: relative;
+    padding: 0 1em;
   }
-  .works__tag__all .works__tag-link .bracket {
-    opacity: 0;
-    transition: opacity 0.2s;
+  .works__tag__all .works__tag-link:not(.works__tag-current):hover::before {
+    content: "『";
+    position: absolute;
+    left: 0;
+    top: 0;
   }
-  .works__tag__all .works__tag-link:hover .bracket {
-    opacity: 1;
+  .works__tag__all .works__tag-link:not(.works__tag-current):hover::after {
+    content: "』";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .works .works__tag-current::before {
+    content: "「";
+  }
+  .works .works__tag-current::after {
+    content: "」";
   }
   .works__posts {
     display: flex;
