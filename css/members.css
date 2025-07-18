@@ -7,9 +7,22 @@ main {
 }
 
 body {
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url(../img/mokume.webp);
-  background-position: 20% 20%;
+  background-position: 80% 66%;
   background-repeat: no-repeat;
+  background-size: 100%;
+  transform: scaleX(-1);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.2;
 }
 
 @media screen and (min-width: 960px) {
