@@ -36,12 +36,13 @@ $breakpoints: (
     @return ($value/16)+rem;
 }
 
-body{
-    font-size: f-rem(16);
-    letter-spacing: 0.15em;
-    line-height: 1.7;
-    color: #595959;
-    font-family:Helvetica, Arial,  sans-serif;
+body {
+    font-size: f-rem(16
+    );
+letter-spacing: 0.15em;
+line-height: 1.7;
+color: #595959;
+font-family: Helvetica, Arial, sans-serif;
 }
 
 // .main{
@@ -53,149 +54,160 @@ body{
 //     }
 // }
 
-.content{
-&__top{
-    @include m-inner;
-    padding-bottom: (30em/16);
-}
-
-&__category{
-font-size: f-rem(14);
-color: #c2c2c2;}
-
-&__thumbnail{
-    width:95%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    @include m-query(desktop) {
-        width:90%;
-        aspect-ratio: 22/9;
+.content {
+    &__top {
+        @include m-inner;
+        padding-top: (80em/16);
+        padding-bottom: (50em/16);
     }
-}
 
-&__text{
-    @include m-inner;
-    font-size: f-rem(14);
-    padding: (80em/16) 0;
-    @include m-query(desktop) {
-display: flex;
-justify-content: space-between;
-padding: (80em/16) 0;
+    &__category {
+        font-size: f-rem(14);
+        color: #c2c2c2;
     }
-}
 
-&__explain{
-    width: 95%;
-    padding-bottom: (50em/16);
-    @include m-query(desktop) {
-        padding-bottom: 0;
-    width: 45%;
+    &__thumbnail {
+        width: 95%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+
+        @include m-query(desktop) {
+            width: 90%;
+            aspect-ratio: 22/9;
+        }
     }
-}
 
-&__detail{
-    width: 65%;
-    margin-left: auto;
-    @include m-query(desktop) {
-        width: 25%;
+    &__text {
+        @include m-inner;
+        font-size: f-rem(14);
+        padding: (100em/16) 0;
+
+        @include m-query(desktop) {
+            font-size: f-rem(16);
+            display: flex;
+            justify-content: space-between;
+            padding: (200em/16) 0;
+        }
     }
-}
 
-&__list{
-    display: flex;
-    justify-content: space-between;
-}
+    &__explain {
+        width: 95%;
+        padding-bottom: (50em/16);
 
-&__list dt{
-color: #c2c2c2;}
+        @include m-query(desktop) {
+            padding-bottom: 0;
+            width: 45%;
+        }
+    }
 
-&__right{
-// text-align: right;
-display: block;
-}
+    &__detail {
+        width: 65%;
+        margin-left: auto;
 
-&__picture{
-    display: flex;
-    object-fit: cover;
-    width: 100%;
+        @include m-query(desktop) {
+            width: 25%;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list dt {
+        color: #c2c2c2;
+    }
+
+    &__right {
+        // text-align: right;
+        display: block;
+    }
+
+    &__picture {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+
         @include m-query(desktop) {
 
-        width: 90%;
+            width: 90%;
         }
+    }
+
+    &__flex {
+        width: 33.33%;
+    }
+
+    &__img {
+        margin-bottom: -10px;
+        width: 100%;
+    }
 }
 
-&__flex{
-width: 33.33%;
-}
-&__img{
-margin-bottom: -10px;
-width: 100%;
-}
-}
-
-.more{
+.more {
     width: 85%;
     margin: (80em/16)0(80em/16)auto;
     background-color: #ededed;
-    padding:(50em/16) 0px ;
+    padding: (50em/16) 0px;
 
     @include m-query(desktop) {
-        padding:(80em/16) 0px;
+        padding: (80em/16) 0px;
     }
 
-&__title{
-    border-bottom: 1px solid #000;
-    width: 50%;
-    padding-left: (50em/16);
-    margin-bottom: (30em/16);
 
-    @include m-query(desktop) {
-        margin-bottom: (50em/16);
-        width: 25%;
+    &__title {
+        border-bottom: 1px solid #000;
+        width: 50%;
+        padding-left: (50em/16);
+        margin-bottom: (30em/16);
+
+        @include m-query(desktop) {
+            margin-bottom: (50em/16);
+            width: 25%;
+        }
     }
-}
 
-&__wrapper {
-    width: 85%;
-    margin-left: auto;
-    overflow: hidden;
-    position: relative;
-  }
+    &__wrapper {
+        width: 85%;
+        margin-left: auto;
+        overflow: hidden;
+        position: relative;
+    }
 
-&__flex{
-    width: 85%;
-display: flex;
-flex-wrap: nowrap;
-white-space: nowrap;
-will-change: transform;
-}
+    &__flex {
+        width: 85%;
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        will-change: transform;
+    }
 
-&__link{
-padding-right: (10em/16);
-flex: 0 0 auto;
-width: 150px;
+    &__link {
+        padding-right: (10em/16);
+        flex: 0 0 auto;
+        width: 150px;
 
-@include m-query(desktop) {
-    width: 200px;
-    padding-right: (20em/16);
-}
-}
+        @include m-query(desktop) {
+            width: 200px;
+            padding-right: (20em/16);
+        }
+    }
 
-// ホバーアニメーション何がいいかなー
-&__link:hover{
-   opacity: 0.7;
-   transition: .3s;
-}
+    // ホバーアニメーション何がいいかなー
+    &__link:hover {
+        opacity: 0.7;
+        transition: .3s;
+    }
 
-&__img{
-    width: 100%;
-    aspect-ratio:2/3;
-    object-fit: cover;
-    // display: block;
-    // margin-bottom: (30em/16);
-}
+    &__img {
+        width: 100%;
+        aspect-ratio: 2/3;
+        object-fit: cover;
+        // display: block;
+        // margin-bottom: (30em/16);
+    }
 
-&__one{
-    font-size: f-rem(14);
-}
+    &__one {
+        font-size: f-rem(14);
+    }
 }

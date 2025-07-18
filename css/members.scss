@@ -38,9 +38,32 @@ main {
     margin-right: auto;
 }
 
+body {
+    position: relative;
+    z-index: 0;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../img/mokume.webp);
+    background-position: 80% 66%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: scaleX(-1
+    );
+z-index: -1;
+pointer-events: none;
+opacity: 0.2;
+}
+
+
 // profile
 
 .profile {
+
 
     //about
     .box {
@@ -48,205 +71,204 @@ main {
 
 
         @include m-query(desktop) {
-            @include m-flex(flex-end
-        );
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-.boxs {
-    display: block;
-    font-size: f-rem(14);
-
-    @include m-query(desktop) {
-        @include m-flex();
-        flex-wrap: nowrap;
-
-    }
-
-}
-
-
-.abouttwo {
-    width: 100%;
-
-    @include m-query(desktop) {
-        width: 50%;
-        padding-bottom: (70em/16);
-
-    }
-}
-
-.boxone {
-    width: 60%;
-}
-
-
-
-.about {
-    width: 100%;
-
-    @include m-query(desktop) {
-        position: relative;
-        width: 50%;
-
-    }
-
-    &__img {
-        height: auto;
-        width: 90%;
-    }
-
-    &__label {
-        position: absolute;
-        top: (200em/16);
-        transform: rotate(90deg);
-        font-size: f-rem(16);
-
-        @include m-query(desktop) {
-
-            top: (70em/16);
-            left: (20em/16);
-            font-size: f-rem(18);
-
-
-        }
-    }
-
-    &__container {
-        position: absolute;
-        bottom: (230em/16);
-        left: (230em/16);
-
-        @include m-query(desktop) {
-            bottom: (70em/16);
-            left: (300em/16);
-
-        }
-
-    }
-
-    &__comment {
-
-
-        padding-bottom: (100em/16);
-
-        @include m-query(desktop) {
-            padding-bottom: 0;
+            @include m-flex(flex-end);
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
 
-    &__occupation {
+    .boxs {
+        display: block;
         font-size: f-rem(14);
-    }
-
-    &__name {
-        font-size: f-rem(22);
-        margin-bottom: (2em/16);
 
         @include m-query(desktop) {
-            font-size: f-rem(28);
-            margin-bottom: (10em/16);
+            @include m-flex();
+            flex-wrap: nowrap;
+
+        }
+
+    }
+
+
+    .abouttwo {
+        width: 100%;
+
+        @include m-query(desktop) {
+            width: 50%;
+            padding-bottom: (70em/16);
 
         }
     }
-}
 
-//career
-.career {
-    padding-bottom: (100em/16);
-    padding-top: (0em/16);
-
-    &__title {
-        padding-bottom: (20em/16);
-
+    .boxone {
+        width: 60%;
     }
 
-    &__list {
-        //          border-left: 1px solid black;
-        //           display: grid;
-        //           grid-template-columns: 100px 1fr; // ← 年数を固定幅に
-        //          row-gap: 0.5em;
-        //          column-gap: 1em;
 
 
-        //            dt {
-        //   padding-left: (40em/16);
+    .about {
+        width: 100%;
 
-        //     white-space: nowrap;
-        //   }
+        @include m-query(desktop) {
+            position: relative;
+            width: 50%;
 
-        //   dd {
-        //     margin: 0;
-        //   }
+        }
 
-        position: relative;
-        display: grid;
-        grid-template-columns: 100px 1fr;
-        row-gap: 0.5em;
-        column-gap: 1em;
-        padding-left: 1px;
+        &__img {
+            height: auto;
+            width: 90%;
+        }
 
-        &::before {
-            content: "";
+        &__label {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 1px;
-            height: 0;
-            background-color: black;
-            transition: height 1.2s ease-out;
+            top: (200em/16);
+            transform: rotate(90deg);
+            font-size: f-rem(16);
+
+            @include m-query(desktop) {
+
+                top: (70em/16);
+                left: (20em/16);
+                font-size: f-rem(18);
+
+
+            }
         }
 
-        &.is-visible::before {
+        &__container {
+            position: absolute;
+            bottom: (230em/16);
+            left: (230em/16);
+
+            @include m-query(desktop) {
+                bottom: (70em/16);
+                left: (300em/16);
+
+            }
+
+        }
+
+        &__comment {
+
+
+            padding-bottom: (100em/16);
+
+            @include m-query(desktop) {
+                padding-bottom: 0;
+            }
+        }
+
+
+        &__occupation {
+            font-size: f-rem(14);
+        }
+
+        &__name {
+            font-size: f-rem(22);
+            margin-bottom: (2em/16);
+
+            @include m-query(desktop) {
+                font-size: f-rem(28);
+                margin-bottom: (10em/16);
+
+            }
+        }
+    }
+
+    //career
+    .career {
+        padding-bottom: (100em/16);
+        padding-top: (0em/16);
+
+        &__title {
+            padding-bottom: (20em/16);
+
+        }
+
+        &__list {
+            //          border-left: 1px solid black;
+            //           display: grid;
+            //           grid-template-columns: 100px 1fr; // ← 年数を固定幅に
+            //          row-gap: 0.5em;
+            //          column-gap: 1em;
+
+
+            //            dt {
+            //   padding-left: (40em/16);
+
+            //     white-space: nowrap;
+            //   }
+
+            //   dd {
+            //     margin: 0;
+            //   }
+
+            position: relative;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            row-gap: 0.5em;
+            column-gap: 1em;
+            padding-left: 1px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 0;
+                background-color: black;
+                transition: height 1.2s ease-out;
+            }
+
+            &.is-visible::before {
+                height: 100%;
+            }
+
+            dt {
+                padding-left: (40em / 16);
+                white-space: nowrap;
+            }
+
+            dd {
+                margin: 0;
+            }
+        }
+    }
+
+    @keyframes lineGrow {
+        from {
+            height: 0;
+        }
+
+        to {
             height: 100%;
         }
+    }
 
-        dt {
-            padding-left: (40em / 16);
-            white-space: nowrap;
+    //awards
+    .awards {
+        &__title {
+            padding-bottom: (20em/16);
         }
 
-        dd {
-            margin: 0;
+        &__list {
+            list-style: none;
+            padding-bottom: (80em/16);
+
+            @include m-query(desktop) {
+                padding-left: 0;
+
+            }
+
+            li {
+                padding-bottom: (10em/16);
+            }
         }
     }
-}
-
-@keyframes lineGrow {
-    from {
-        height: 0;
-    }
-
-    to {
-        height: 100%;
-    }
-}
-
-//awards
-.awards {
-    &__title {
-        padding-bottom: (20em/16);
-    }
-
-    &__list {
-        list-style: none;
-        padding-bottom: (80em/16);
-
-        @include m-query(desktop) {
-            padding-left: 0;
-
-        }
-
-        li {
-            padding-bottom: (10em/16);
-        }
-    }
-}
 
 }
 
