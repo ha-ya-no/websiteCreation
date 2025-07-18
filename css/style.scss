@@ -133,23 +133,49 @@ img {
         transition: opacity 0.5s ease, transform 0.5s ease;
         margin-bottom: (20em/16);
 
-        span {
-            color: #5a5655;
-            font-size: f-rem(14);
+        a {
+            position: relative;
+            display: inline-block;
+            color: inherit;
+            text-align: right;
+            overflow: hidden;
+            line-height: 150%;
+
+            span {
+                display: inline-block;
+                transform: translateY(0);
+                transition: transform 1.2s cubic-bezier(0.14, 1, 0.34, 1);
+            }
+
+            &::before {
+                content: attr(data-text);
+                text-align: right;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                transform: translateY(0);
+                transition: transform 1.2s cubic-bezier(0.14, 1, 0.34, 1);
+                color: inherit;
+            }
+
+            &:hover span {
+                transform: translateY(-100%);
+            }
+
+            &:hover::before {
+                transform: translateY(-100%);
+            }
         }
     }
 
     &__inst {
         width: 35px;
-    }
-
-    &__mail {
-        width: 60px;
+        margin-left: auto;
+        margin-right: 0;
     }
 
     &__link {
         @include m-flex(flex-start);
-        width: fit-content;
         margin-top: (50em/16);
         margin-left: auto;
     }
@@ -159,9 +185,15 @@ img {
 
         a {
             display: block;
+            margin-left: auto;
+            transition: color 0.3s ease;
 
             &:nth-child(1) {
-                margin-bottom: (10em/16);
+                margin-bottom: (25em/16);
+            }
+
+            &:hover {
+                color: #747474;
             }
         }
     }

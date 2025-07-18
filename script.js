@@ -7,14 +7,19 @@ hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-document.addEventListener('click', (e) => {
+menu.querySelectorAll('a, button, img, li').forEach(el => {
+    el.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
+
+menu.addEventListener('click', () => {
     if (menu.classList.contains('active')) {
-        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-            hamburger.classList.remove('active');
-            menu.classList.remove('active');
-        }
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
     }
 });
+
 
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
