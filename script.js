@@ -18,21 +18,24 @@ document.addEventListener('click', (e) => {
 
 /*topのタグホバーアニメーション
 ------------------------------*/
-const cards = document.querySelectorAll('.works__tag');
+const links = document.querySelectorAll('.works__tag-link');
 
-cards.forEach(card => {
-  const title = card.querySelector('.works__tag-link');
-  const originalText = title.textContent;
+links.forEach(link => {
+  const textElement = link.querySelector('.text');
+  const rawText = textElement.textContent;
 
-  card.addEventListener('mouseenter', () => {
-    if (!title.textContent.startsWith('「')) {
-      title.textContent = `『${originalText}』`;
-    }
-  });
+  // 文字列に「」が含まれていれば hover を無効にする
+  const hasJapaneseQuotes = rawText.includes('「') || rawText.includes('」');
 
-  card.addEventListener('mouseleave', () => {
-    title.textContent = originalText;
-  });
+  if (!hasJapaneseQuotes) {
+    link.addEventListener('mouseenter', () => {
+      link.classList.add('hover');
+    });
+
+    link.addEventListener('mouseleave', () => {
+      link.classList.remove('hover');
+    });
+  }
 });
 
 // 理念アニメーション
