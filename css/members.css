@@ -1,7 +1,8 @@
 /*mixin
 -------------------------*/
 main {
-  width: 90%;
+  width: 93.0555555556%;
+  max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -31,9 +32,6 @@ body::before {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 .profile .boxs {
@@ -54,7 +52,7 @@ body::before {
 }
 @media screen and (min-width: 960px) {
   .profile .abouttwo {
-    width: 50%;
+    width: 60%;
     padding-bottom: 4.375em;
   }
 }
@@ -67,12 +65,8 @@ body::before {
 @media screen and (min-width: 960px) {
   .profile .about {
     position: relative;
-    width: 50%;
+    width: 40%;
   }
-}
-.profile .about__img {
-  height: auto;
-  width: 90%;
 }
 .profile .about__label {
   position: absolute;

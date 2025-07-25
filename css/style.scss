@@ -34,6 +34,15 @@ $breakpoints: (
 
 /*common
 -------------------------*/
+body {
+    font-size: f-rem(16
+    );
+letter-spacing: 0.15em;
+line-height: 1.7;
+color: #595959;
+font-family: Helvetica, Arial, sans-serif;
+}
+
 img {
     max-width: 100%;
     margin-left: auto;
@@ -45,23 +54,22 @@ img {
 -------------------------*/
 .header {
     &__inner {
-        @include m-inner(
-    );
-    @include m-flex();
-    padding: (35em/16) 0;
-}
-
-&__title {
-    flex: 1;
-}
-
-&__logo {
-    width: 200px;
-
-    @include m-query(tablet) {
-        width: 280px;
+        @include m-inner();
+        @include m-flex();
+        padding: (35em/16) 0;
     }
-}
+
+    &__title {
+        flex: 1;
+    }
+
+    &__logo {
+        width: 200px;
+
+        @include m-query(tablet) {
+            width: 280px;
+        }
+    }
 }
 
 /*hamburger*/

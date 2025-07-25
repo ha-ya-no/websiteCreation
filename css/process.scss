@@ -147,6 +147,8 @@ font-family: Helvetica, Arial, sans-serif;
         border: 1px rgba(#000, 0.3) solid;
         background-color: #fff;
         aspect-ratio: 1/1;
+        position: relative;
+        z-index: 1;
 
         @include m-query(tablet) {
             width: 60%;

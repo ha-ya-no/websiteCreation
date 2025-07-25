@@ -2,6 +2,14 @@
 -------------------------*/
 /*common
 -------------------------*/
+body {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  line-height: 1.7;
+  color: #595959;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 img {
   max-width: 100%;
   margin-left: auto;

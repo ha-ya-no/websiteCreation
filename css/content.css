@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*mixin
 -------------------------*/
 body {
@@ -37,12 +38,11 @@ body {
   max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: 6.25em 0;
 }
 @media screen and (min-width: 960px) {
   .content__text {
-    font-size: 1rem;
     display: flex;
     justify-content: space-between;
     padding: 12.5em 0;
@@ -96,6 +96,57 @@ body {
   width: 100%;
 }
 
+.modal {
+  display: none;
+  /* 初期状態は非表示 */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+.modal__content {
+  display: block;
+  margin: auto;
+  width: 65%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.modal__close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 3.75rem;
+  cursor: pointer;
+}
+.modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 1000;
+  padding: 0 15px;
+}
+.modal__nav--prev {
+  left: 20px;
+}
+.modal__nav--next {
+  right: 20px;
+}
+.modal__nav.hidden {
+  display: none;
+}
+
 .more {
   width: 85%;
   margin: 5em 0 5em auto;
@@ -135,12 +186,12 @@ body {
 .more__link {
   padding-right: 0.625em;
   flex: 0 0 auto;
-  width: 150px;
+  width: 200px;
 }
 @media screen and (min-width: 960px) {
   .more__link {
     width: 200px;
-    padding-right: 1.25em;
+    padding-right: 2.5em;
   }
 }
 .more__link:hover {

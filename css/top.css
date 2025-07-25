@@ -6,7 +6,7 @@
     color: #000;
   }
   .span {
-    background-image: url("../img/hehehe.jpg");
+    background-image: url("../img/1.jpg");
     background-size: cover;
     background-position: center;
     display: block;
@@ -128,22 +128,40 @@
     font-size: 1.875rem;
     margin-bottom: 0.5em;
   }
-  .works__tag {
+  .works__tag__all {
     padding-top: 2.8125rem;
     padding-bottom: 7.1875rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    text-align: center;
+    gap: 2.1875rem;
   }
-  .works__tag-link {
-    padding-right: 2.8125rem;
+  .works__tag__all .works__tag-link {
+    display: inline-block;
+    text-align: center;
     font-size: 0.875rem;
-    color: #333;
-    text-decoration: none;
+    box-sizing: border-box;
     transition: opacity 0.2s;
+    position: relative;
+    padding: 0 1em;
   }
-  .works__tag-link:hover {
-    opacity: 0.7;
+  .works__tag__all .works__tag-link:not(.works__tag-current):hover::before {
+    content: "『";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .works__tag__all .works__tag-link:not(.works__tag-current):hover::after {
+    content: "』";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .works .works__tag-current::before {
+    content: "「";
+  }
+  .works .works__tag-current::after {
+    content: "」";
   }
   .works__posts {
     display: flex;
@@ -183,6 +201,13 @@
     -o-object-fit: cover;
        object-fit: cover;
     display: block;
+    /*モノクロのやつ
+    ------------------------------*/
+    filter: grayscale(100%);
+  }
+  .works__img :hover {
+    filter: grayscale(0%);
+    transition: 0.2s;
   }
   /* こっからわーくすおわり！！！！
   ------------------------------*/
@@ -192,7 +217,50 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2.5em 1.25em;
+    padding: 2.5em 3.75em;
+  }
+  .footer__address {
+    flex: 1;
+    min-width: 13.75em;
+    font-size: 1rem;
+    padding-top: 3.9em;
+  }
+  .footer__address-line {
+    margin: 0 0 0.5em 0;
+    font-size: 0.875rem;
+  }
+  .footer__right {
+    flex: 1;
+    min-width: 13.75em;
+    line-height: 1.8;
+    text-align: right;
+    font-size: 1rem;
+  }
+  .footer__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.625em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .footer__nav-item {
+    margin-bottom: 0.3125;
+  }
+  .footer__nav-link {
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+  }
+  .footer__nav-link:hover {
+    opacity: 0.7;
+  }
+  .footer__copy {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 0.8333333333;
   }
   .footer__address {
     flex: 1;

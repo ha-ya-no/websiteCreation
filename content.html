@@ -25,19 +25,21 @@
             </div>
             <nav id="menu" class="menu">
                 <ul class="menu__list">
-                    <li class="menu__item"><a href="top.html">top</a></li>
-                    <li class="menu__item"><a href="company.html">company</a></li>
-                    <li class="menu__item"><a href="members.html">members</a></li>
-                    <li class="menu__item"><a href="process.html">process</a></li>
-                    <li class="menu__item"><a href="">works</a></li>
-                    <li class="menu__item"><a href="contact.html">contact</a></li>
+                    <li class="menu__item"><a href="top.html" data-text="top"><span>top</span></a></li>
+                    <li class="menu__item"><a href="./top.html#works" data-text="works"><span>works</span></a></li>
+                    <li class="menu__item"><a href="company.html" data-text="campany"><span>campany</span></a></li>
+                    <li class="menu__item"><a href="members.html" data-text="members"><span>members</span></a></li>
+                    <li class="menu__item"><a href="process.html" data-text="process"><span>process</span></a></li>
+                    <li class="menu__item"><a href="contact.html" data-text="contact"><span>contact</span></a></li>
                     <li class="menu__link menu__item">
-                        <a href="https://www.instagram.com/k_uemura.archi/">
-                            <img class="menu__inst" src="./img/instIcon.png" alt="植村康平建築設計事務所インスタグラム">
-                        </a>
-                        <a href="#">
-                            <img class="menu__mail" src="./img/mailIcon.png" alt="お問い合わせ">
-                        </a>
+                        <img class="menu__inst" src="./img/instIcon.png" alt="">
+                        <div class="menu__username">
+                            <a href="https://www.instagram.com/k_uemura.archi/">植村康平建築設計事務所Instagram<br>@k_uemura.archi
+                            </a>
+                            <a href="https://www.instagram.com/koheiuemura/">Kohei Uemura
+                                Instagram<br>@koheiuemura
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -52,7 +54,7 @@
                 <a href="#" class="content__category">リノベーション</a>
             </div>
 
-            <img src="./img/hehehe.jpg" alt="" class="content__thumbnail">
+            <img src="./img/1.jpg" alt="" class="content__thumbnail">
 
             <div class="content__text">
                 <p class="content__explain">
@@ -100,30 +102,37 @@
             <div class="content__picture">
                 <!-- クリックしたら一個の画層を大きく表示できるように -->
                 <div class="content__flex">
-                    <img src="./img/hehehe02.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe03.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
+                    <img src="./img/11.jpg" alt="" class="content__img">
+                    <img src="./img/2.jpg" alt="" class="content__img">
+                    <img src="./img/3.jpg" alt="" class="content__img">
+                    <img src="./img/4.jpg" alt="" class="content__img">
+                    <img src="./img/5.jpg" alt="" class="content__img">
+                    <img src="./img/6.jpg" alt="" class="content__img">
                 </div>
                 <div class="content__flex">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe02.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe02.jpg" alt="" class="content__img">
+                    <img src="./img/7.jpg" alt="" class="content__img">
+                    <img src="./img/8.jpg" alt="" class="content__img">
+                    <img src="./img/9.jpg" alt="" class="content__img">
+                    <img src="./img/10.jpg" alt="" class="content__img">
+                    <img src="./img/11.jpg" alt="" class="content__img">
+                    <img src="./img/7.jpg" alt="" class="content__img">
                 </div>
                 <div class="content__flex">
-                    <img src="./img/hehehe.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe02.jpg" alt="" class="content__img">
-                    <img src="./img/mikan.jpg" alt="" class="content__img">
-                    <img src="./img/hehehe02.jpg" alt="" class="content__img">
+                    <img src="./img/3.jpg" alt="" class="content__img">
+                    <img src="./img/4.jpg" alt="" class="content__img">
+                    <img src="./img/5.jpg" alt="" class="content__img">
+                    <img src="./img/6.jpg" alt="" class="content__img">
+                    <img src="./img/2.jpg" alt="" class="content__img">
+                    <img src="./img/8.jpg" alt="" class="content__img">
+                    <img src="./img/9.jpg" alt="" class="content__img">
                 </div>
+            </div>
+
+            <div id="modal" class="modal">
+                <span class="modal__close">&times;</span>
+                <span id="prevBtn" class="modal__nav modal__nav--prev">&lt;</span>
+                <img class="modal__content" id="modalImg">
+                <span id="nextBtn" class="modal__nav modal__nav--next">&gt;</span>
             </div>
         </section>
 

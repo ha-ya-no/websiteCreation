@@ -20,6 +20,18 @@ menu.addEventListener('click', () => {
     }
 });
 
+const worksLink = document.querySelector('a[href$="#works"]');
+
+if (worksLink) {
+    worksLink.addEventListener('click', () => {
+        const isTopPage = location.pathname.endsWith('top.html') || location.pathname === '/' || location.pathname === '/index.html';
+
+        if (isTopPage && menu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+        }
+    });
+}
 
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
@@ -128,3 +140,52 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateLineHeight);
     updateLineHeight();
 });
+
+// モーダル
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".modal__close");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+const images = Array.from(document.querySelectorAll('.content__img'));
+let currentIndex = 0;
+
+images.forEach((img, index) => {
+    img.addEventListener('click', function () {
+        currentIndex = index;
+        showImage();
+        modal.style.display = "flex";
+    });
+});
+
+function showImage() {
+    modalImg.src = images[currentIndex].src;
+
+    prevBtn.classList.toggle('hidden', currentIndex === 0);
+    nextBtn.classList.toggle('hidden', currentIndex === images.length - 1);
+}
+
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+nextBtn.onclick = function () {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+        showImage();
+    }
+};
+
+prevBtn.onclick = function () {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showImage();
+    }
+};
