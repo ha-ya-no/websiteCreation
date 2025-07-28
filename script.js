@@ -74,6 +74,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// トップ-フェードインアニメーション
+function fadeInOnScroll() {
+    const elements = document.querySelectorAll('.fade-in');
+
+    elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight - 100) {
+            el.classList.add('in-view');
+        }
+    });
+}
+
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+
+
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
     const philosophyText = document.querySelector('.philosophy__text');
@@ -117,6 +135,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (target) {
         observer.observe(target);
     }
+});
+
+// membersフェードインアニメーション
+document.addEventListener("DOMContentLoaded", () => {
+    const target = document.querySelector('.profiles__container');
+
+    if (!target) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.4
+    });
+
+    observer.observe(target);
 });
 
 /*プロセスアニメーション-スマホ-交互に現れる*/

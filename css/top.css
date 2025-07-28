@@ -23,7 +23,7 @@
 }
 @media screen and (min-width: 960px) {
   .span__nav {
-    top: 30%;
+    top: 23%;
     left: 15%;
   }
 }
@@ -32,8 +32,8 @@
 }
 @media screen and (min-width: 960px) {
   .span__nav h1 {
-    font-size: 2.1875rem;
-    padding-top: 1.1428571429em;
+    font-size: 1.6875rem;
+    padding-top: 1.4814814815em;
   }
 }
 .span__nav p {
@@ -258,6 +258,16 @@
 .works__img :hover {
   filter: grayscale(0%);
   transition: 0.5s;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* こっからわーくすおわり！！！！

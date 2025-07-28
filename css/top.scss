@@ -59,7 +59,7 @@ position: relative;
     @include m-query(desktop) {
         // padding-top: 23.75em;
         // padding-left: 13.75em;
-        top: 30%;
+        top: 23%;
         left: 15%;
 
     }
@@ -69,8 +69,8 @@ position: relative;
         font-size: f-rem(20);
 
         @include m-query(desktop) {
-            font-size: f-rem(35);
-            padding-top: (40em/35);
+            font-size: f-rem(27);
+            padding-top: (40em/27);
         }
     }
 
@@ -310,6 +310,17 @@ position: relative;
             filter: grayscale(0%);
             transition: 0.5s;
         }
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    &.in-view {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
