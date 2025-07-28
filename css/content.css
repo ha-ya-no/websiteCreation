@@ -14,8 +14,11 @@ body {
   max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5em;
-  padding-bottom: 3.125em;
+  padding-top: 7.5em;
+  padding-bottom: 7.5em;
+}
+.content__title {
+  font-size: 1.4375rem;
 }
 .content__category {
   font-size: 0.875rem;
@@ -151,42 +154,49 @@ body {
   width: 85%;
   margin: 5em 0 5em auto;
   background-color: #ededed;
-  padding: 3.125em 0px;
+  padding: 3.125em 0;
 }
 @media screen and (min-width: 960px) {
   .more {
-    padding: 5em 0px;
+    padding: 5em 0;
+    margin-top: 15.625em;
+    margin-bottom: 15.625em;
   }
 }
 .more__title {
-  border-bottom: 1px solid #000;
-  width: 50%;
-  padding-left: 3.125em;
+  position: relative;
+  font-size: 1.25rem;
   margin-bottom: 1.875em;
+  padding-left: 3.75em;
+}
+.more__title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 10em;
+  height: 1.5px;
+  background-color: #c2c2c2;
 }
 @media screen and (min-width: 960px) {
   .more__title {
     margin-bottom: 3.125em;
-    width: 25%;
   }
 }
 .more__wrapper {
-  width: 85%;
-  margin-left: auto;
   overflow: hidden;
   position: relative;
 }
 .more__flex {
-  width: 85%;
   display: flex;
-  flex-wrap: nowrap;
   white-space: nowrap;
   will-change: transform;
 }
 .more__link {
-  padding-right: 0.625em;
   flex: 0 0 auto;
-  width: 200px;
+  width: 180px;
+  padding-right: 1.25em;
+  text-align: center;
 }
 @media screen and (min-width: 960px) {
   .more__link {
@@ -206,5 +216,6 @@ body {
 }
 .more__one {
   font-size: 0.875rem;
+  margin-top: 0.625em;
 }
 /*# sourceMappingURL=content.css.map */

@@ -57,8 +57,12 @@ font-family: Helvetica, Arial, sans-serif;
 .content {
     &__top {
         @include m-inner;
-        padding-top: (80em/16);
-        padding-bottom: (50em/16);
+        padding-top: (120em/16);
+        padding-bottom: (120em/16);
+    }
+
+    &__title {
+        font-size: f-rem(23);
     }
 
     &__category {
@@ -201,68 +205,76 @@ font-family: Helvetica, Arial, sans-serif;
 
 .more {
     width: 85%;
-    margin: (80em/16)0(80em/16)auto;
+    margin: (80em/16) 0 (80em/16) auto;
     background-color: #ededed;
-    padding: (50em/16) 0px;
+    padding: (50em/16) 0;
 
     @include m-query(desktop) {
-        padding: (80em/16) 0px;
+        padding: (80em/16) 0;
+        margin-top: (250em/16);
+        margin-bottom: (250em/16);
     }
 
-
     &__title {
-        border-bottom: 1px solid #000;
-        width: 50%;
-        padding-left: (50em/16);
-        margin-bottom: (30em/16);
+        position: relative;
+        font-size: f-rem(20);
+        margin-bottom: (30em / 16);
+        padding-left: (60em/16);
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px; // テキストとの距離（調整可）
+            left: 0; // 左寄せしたいなら left: 0
+            width: (160em / 16); // ← 線の長さ（ここで調整）
+            height: 1.5px;
+            background-color: #c2c2c2;
+        }
+
+
+
 
         @include m-query(desktop) {
             margin-bottom: (50em/16);
-            width: 25%;
         }
     }
 
     &__wrapper {
-        width: 85%;
-        margin-left: auto;
         overflow: hidden;
         position: relative;
     }
 
     &__flex {
-        width: 85%;
         display: flex;
-        flex-wrap: nowrap;
         white-space: nowrap;
         will-change: transform;
     }
 
     &__link {
-        padding-right: (10em/16);
         flex: 0 0 auto;
-        width: 200px;
+        width: 180px;
+        padding-right: (20em/16);
+        text-align: center;
 
         @include m-query(desktop) {
             width: 200px;
             padding-right: (40em/16);
         }
-    }
 
-    // ホバーアニメーション何がいいかなー
-    &__link:hover {
-        opacity: 0.7;
-        transition: .3s;
+        &:hover {
+            opacity: 0.7;
+            transition: 0.3s;
+        }
     }
 
     &__img {
         width: 100%;
-        aspect-ratio: 2/3;
+        aspect-ratio: 2 / 3;
         object-fit: cover;
-        // display: block;
-        // margin-bottom: (30em/16);
     }
 
     &__one {
         font-size: f-rem(14);
+        margin-top: (10em/16);
     }
 }

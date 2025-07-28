@@ -14,7 +14,7 @@ $breakpoints: (
     }
 }
 
-@mixin m-inner($w: (1340/1440)*100%, $mw: 1340px) {
+@mixin m-inner($w: 94%, $mw: 15000px) {
     width: $w;
     max-width: $mw;
     margin-left: auto;
@@ -103,6 +103,12 @@ img {
 
     &.active span:nth-child(3) {
         transform: rotate(-45deg) translate(0px, -10px);
+    }
+}
+
+.top-hamburger {
+    span {
+        background-color: #fff;
     }
 }
 
@@ -267,7 +273,8 @@ $footer-copy-color: #555;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2.5em 1.25em; // 40px, 20px
+    padding-top: (30em/16);
+    padding-bottom: (30em/16);
 
     &__address {
         flex: 1;
@@ -321,4 +328,31 @@ $footer-copy-color: #555;
         color: $footer-copy-color;
         margin-top: 0.625em; // 10px/16
     }
+}
+
+// トップボタン
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 0px;
+    // padding: 10px 15px;
+    font-size: 16px;
+    // background-color: #333;
+    // color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+
+    img {
+        width: 80px;
+    }
+}
+
+#back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
 }

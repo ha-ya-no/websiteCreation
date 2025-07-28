@@ -13,7 +13,7 @@ $breakpoints: (
     }
 }
 
-@mixin m-inner($w: (1340/1440)*100%, $mw: 1340px) {
+@mixin m-inner($w: 95%, $mw: 15000px) {
     width: $w;
     max-width: $mw;
     margin-left: auto;
@@ -31,78 +31,101 @@ $breakpoints: (
     @return ($value/16) * 1rem;
 }
 
-@include m-query(desktop) {
-    .body {
-        color: #000;
-    }
+// @include m-query(desktop) {
+.body {
+    color: #000;
+}
 
-    .span {
-        background-image: url("../img/1.jpg"
-        );
-    background-size: cover;
-    background-position: center;
-    display: block;
-    width: 100%;
-    height: 100vh;
+.span {
+    background-image: url("../img/1.jpg"
+    );
+background-size: cover;
+background-position: center;
+display: block;
+width: 100%;
+height: 100vh;
+position: relative;
+color: #fff;
+
+&__nav {
     position: relative;
-    color: #fff;
+    z-index: 2;
+    // padding-top: 23.75em;
+    // padding-left: 13.75em;
+    // margin: auto 0;
+    top: 20%;
+    left: 15%;
 
-    &__nav {
-        position: relative;
-        z-index: 2;
-        padding-top: 23.75em;
-        padding-left: 13.75em;
+    @include m-query(desktop) {
+        // padding-top: 23.75em;
+        // padding-left: 13.75em;
+        top: 30%;
+        left: 15%;
 
-        h1 {
+    }
+
+
+    h1 {
+        font-size: f-rem(20);
+
+        @include m-query(desktop) {
             font-size: f-rem(35);
-            padding-top: (40em/35); //40px
-        }
-
-        p {
-            font-size: f-rem(12);
+            padding-top: (40em/35);
         }
     }
 
-    &__namber {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 18px;
-        margin-top: (45em/18); //45px
+    p {
+        font-size: f-rem(12);
     }
+}
 
-    &__line {
-        width: 100px;
-        height: 1px;
-        background-color: #fff;
-        display: inline-block;
-    }
+&__namber {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    margin-top: (45em/18); //45px
+}
 
-    &__Category {
-        padding-top: f-rem(35);
-        align-items: center;
-        gap: 135px;
-    }
+&__line {
+    width: 100px;
+    height: 1px;
+    background-color: #fff;
+    display: inline-block;
+}
 
-    &__more {
-        padding-top: f-rem(55);
-        text-decoration: underline;
-    }
+&__Category {
+    padding-top: (35em/16);
+    align-items: center;
+    gap: 135px;
+}
 
-    &__scroll {
-        padding-top: f-rem(170);
-        margin-left: f-rem(120);
+&__more {
+    padding-top: f-rem(55);
+    text-decoration: underline;
+}
+
+&__scroll {
+    @include m-query(desktop) {
+        padding-top: (170em/16);
+        margin-left: (120em/16);
     }
+}
 }
 
 .half__black__filter {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50vw;
+    width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+
+    @include m-query(desktop) {
+        width: 50vw;
+        background: rgba(0, 0, 0, 0.4);
+    }
 }
 
 /*　スクロールダウンの実装
@@ -152,8 +175,15 @@ $breakpoints: (
 /* こっからわーくす！！！！
 ------------------------------*/
 .works {
-    padding-top: f-rem(225);
-    padding-left: 10%;
+    padding-top: (100em/16);
+
+    @include m-query(desktop) {
+        padding-top: (200em/16);
+    }
+
+
+    // padding-left: 10%;
+    @include m-inner();
 
     &__title {
         font-size: f-rem(30);
@@ -161,12 +191,18 @@ $breakpoints: (
     }
 
     &__tag__all {
-        padding-top: f-rem(45);
-        padding-bottom: f-rem(115);
+
+        padding-top: (30em/16);
+        padding-bottom: (80em/16);
         display: flex;
         flex-wrap: wrap;
         text-align: center;
-        gap: f-rem(35);
+        gap: f-rem(8);
+
+        @include m-query(desktop) {
+            padding-top: (40em/16);
+            padding-bottom: (100em/16);
+        }
 
         .works__tag-link {
             display: inline-block;
@@ -178,14 +214,16 @@ $breakpoints: (
             padding: 0 1em;
 
             &:not(.works__tag-current):hover::before {
-                content: "『";
+                content: "『  ";
+                // padding-right: f-rem(5);
                 position: absolute;
                 left: 0;
                 top: 0;
             }
 
             &:not(.works__tag-current):hover::after {
-                content: "』";
+                content: "  』";
+                // padding-left: f-rem(5);
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -195,25 +233,35 @@ $breakpoints: (
 
     .works__tag-current {
         &::before {
-            content: "「";
+            content: "「 ";
         }
 
         &::after {
-            content: "」";
+            content: " 」";
         }
     }
 
     &__posts {
         display: flex;
-        gap: f-rem(20);
+        gap: f-rem(10);
         flex-wrap: wrap;
+
+        @include m-query(desktop) {
+            gap: f-rem(20);
+        }
     }
 
     &__post {
-        width: f-rem(300);
-        padding-bottom: f-rem(80);
+        // width: f-rem(300);
+        width: 31%;
+        padding-bottom: (30em/16);
         background: #fff;
         border-radius: 0.5em;
+
+        @include m-query(desktop) {
+            width: 22%;
+            padding-bottom: (80em/16);
+        }
 
         a {
             display: block;
@@ -222,37 +270,45 @@ $breakpoints: (
         }
 
         h2 {
-            padding-top: f-rem(20);
+            padding-top: (10em/16);
             font-size: f-rem(14);
-            margin-bottom: 0.5em;
         }
 
         p {
             font-size: f-rem(10);
             color: #888;
+
+            @include m-query(mobile) {
+                font-size: f-rem(12);
+            }
         }
     }
 
     &__img {
-        width: f-rem(230);
-        height: f-rem(330);
-        overflow: hidden;
+        // width: f-rem(230);
+        // height: f-rem(330);
+        aspect-ratio: 2/3;
+        object-fit: cover;
+        // overflow: hidden;
         display: block;
         position: relative;
+
+        // @include m-query(mobile) {
+        //     aspect-ratio: 3/4;
+        // }
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            /*モノクロのやつ
-    ------------------------------*/
+            // モノクロのやつ
             filter: grayscale(100%);
         }
 
         :hover {
             filter: grayscale(0%);
-            transition: 0.2s;
+            transition: 0.5s;
         }
     }
 }
@@ -270,13 +326,20 @@ $footer-copy-color: #555;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2.5em 3.75em; // 40px, 60px
+
+    &__inner {
+        @include m-inner();
+    }
 
     &__address {
-        flex: 1;
-        min-width: 13.75em;
+        // flex: 1;
+        // min-width: 13.75em;
         font-size: f-rem(16);
-        padding-top: 3.9em;
+        // padding-top: (50em/16);
+
+        // @include m-query(desktop) {
+        //     // padding-top: (30em/16); // 137 - 75px/16
+        // }
 
         &-line {
             margin: 0 0 0.5em 0;
@@ -327,7 +390,7 @@ $footer-copy-color: #555;
 
     &__address {
         flex: 1;
-        min-width: 13.75em; // 220px/16
+        // min-width: 13.75em; // 220px/16
         font-size: f-rem(16);
         padding-top: 3.9em; //137 - 75px/16
 
@@ -337,45 +400,46 @@ $footer-copy-color: #555;
         }
     }
 
-    &__right {
-        flex: 1;
-        min-width: 13.75em;
-        line-height: 1.8;
-        text-align: right;
-        font-size: f-rem(16);
-    }
+    // &__right {
+    //     flex: 1;
+    //     min-width: 13.75em;
+    //     line-height: 1.8;
+    //     text-align: right;
+    //     font-size: f-rem(16);
+    // }
 
-    &__nav {
-        &-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 0.625em 0; // 10px/16
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+    // &__nav {
+    //     &-list {
+    //         list-style: none;
+    //         padding: 0;
+    //         margin: 0 0 0.625em 0; // 10px/16
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: flex-end;
+    //     }
 
-        &-item {
-            margin-bottom: (5/16); // 5px/16
-        }
+    //     &-item {
+    //         margin-bottom: (5/16); // 5px/16
+    //     }
 
-        &-link {
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            color: inherit;
-            font-size: f-rem(14);
-            transition: opacity 0.2s;
+    //     &-link {
+    //         letter-spacing: 0.1em;
+    //         text-decoration: none;
+    //         color: inherit;
+    //         font-size: f-rem(14);
+    //         transition: opacity 0.2s;
 
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-    }
+    //         &:hover {
+    //             opacity: 0.7;
+    //         }
+    //     }
+    // }
 
-    &__copy {
-        font-size: f-rem(12);
-        color: $footer-copy-color;
-        margin-top: (10/12); // 10px
-    }
+    // &__copy {
+    //     font-size: f-rem(12);
+    //     color: $footer-copy-color;
+    //     margin-top: (10/12); // 10px
+    // }
 }
-}
+
+// }

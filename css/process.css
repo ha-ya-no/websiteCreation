@@ -10,14 +10,20 @@ body {
 .main__inner {
   width: 90%;
   margin: 0 auto;
+  padding-bottom: 11.25em;
   width: 83.3333333333%;
   max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
 }
+.main__h2 {
+  padding-top: 5em;
+}
 
 .process {
   position: relative;
+  padding-right: 1.875em;
+  padding-left: 1.875em;
 }
 .process__line {
   display: none;
@@ -27,7 +33,7 @@ body {
     display: block;
     position: absolute;
     top: 0;
-    left: 19%;
+    left: 21%;
     transform: translateX(-50%);
     width: 1px;
     height: 0;
@@ -79,6 +85,9 @@ body {
     justify-content: space-between;
   }
 }
+.process__flow:last-child .process__pic::after {
+  display: none;
+}
 .process__num {
   text-align: center;
   font-size: 5rem;
@@ -129,6 +138,22 @@ body {
     margin: 0 auto;
   }
 }
+.process__pic::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -100%;
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  transition: transform 2s ease-out;
+  z-index: -1;
+}
+.process__pic.line-grow::after {
+  transform: translateX(-50%) scaleY(1);
+}
 @media screen and (min-width: 960px) {
   .process__text {
     width: 57%;
@@ -160,6 +185,7 @@ body {
   padding: 1.25em;
   line-height: 2;
   border-left: #000 1px solid;
+  margin-bottom: 4.375em;
 }
 .process__item:hover {
   font-weight: bold;

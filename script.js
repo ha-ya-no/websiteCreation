@@ -33,6 +33,47 @@ if (worksLink) {
     });
 }
 
+// トップボタン
+document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("back-to-top");
+    const header = document.getElementById("main-header");
+    const footer = document.querySelector("footer.footer");
+
+    window.addEventListener("scroll", () => {
+        const headerBottom = header.getBoundingClientRect().bottom;
+
+        if (headerBottom < 0) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (footerRect.top < windowHeight) {
+            backToTopButton.style.position = "absolute";
+            const offset = window.scrollY + footerRect.top - backToTopButton.offsetHeight - 10;
+            backToTopButton.style.top = `${offset}px`;
+            backToTopButton.style.right = "10px";
+            backToTopButton.style.bottom = "auto";
+        } else {
+            backToTopButton.style.position = "fixed";
+            backToTopButton.style.bottom = "0px";
+            backToTopButton.style.top = "auto";
+            backToTopButton.style.right = "10px";
+        }
+    });
+
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+});
+
+
 // 理念アニメーション
 document.addEventListener('DOMContentLoaded', () => {
     const philosophyText = document.querySelector('.philosophy__text');
@@ -78,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/*プロセスアニメーション-スマホ*/
+/*プロセスアニメーション-スマホ-交互に現れる*/
 document.addEventListener("DOMContentLoaded", () => {
     const flows = document.querySelectorAll(".process__flow");
 
@@ -109,37 +150,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/*プロセスアニメーション-デスクトップ*/
-document.addEventListener("DOMContentLoaded", () => {
-    const line = document.querySelector(".process__line");
-    const section = document.querySelector(".process");
+// /*プロセスアニメーション-デスクトップ-ラインが出る*/
+document.addEventListener('DOMContentLoaded', () => {
+    const flows = Array.from(document.querySelectorAll('.process__flow'));
+    let current = 0;
 
-    if (!line || !section) return;
-
-    let maxHeight = 0;
-
-    const updateLineHeight = () => {
-        const scrollY = window.scrollY || window.pageYOffset;
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        const scrolledInSection = scrollY + window.innerHeight / 2 - sectionTop;
-
-        if (scrolledInSection > 0 && scrollY + window.innerHeight > sectionTop) {
-            const progress = Math.min(1, scrolledInSection / sectionHeight);
-            const newHeight = sectionHeight * progress;
-
-            if (newHeight > maxHeight) {
-                maxHeight = newHeight;
-                line.style.height = `${maxHeight}px`;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = flows.indexOf(entry.target);
+                if (index === current) {
+                    animateLine(index);
+                    observer.unobserve(entry.target);
+                }
             }
-        }
-    };
+        });
+    }, {
+        threshold: 0.5
+    });
 
-    window.addEventListener("scroll", updateLineHeight);
-    window.addEventListener("resize", updateLineHeight);
-    updateLineHeight();
+    flows.forEach(flow => observer.observe(flow));
+
+    function animateLine(index) {
+        const pic = flows[index].querySelector('.process__pic');
+        pic.classList.add('line-grow');
+
+        setTimeout(() => {
+            current++;
+            const next = flows[current];
+            if (next) {
+                const bounding = next.getBoundingClientRect();
+                if (bounding.top < window.innerHeight && bounding.bottom > 0) {
+                    animateLine(current);
+                }
+            }
+        }, 2000);
+    }
 });
+
 
 // モーダル
 const modal = document.getElementById("modal");

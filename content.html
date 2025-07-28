@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTENT</title>
+    <title>CONTENT | 植村康平建築設計事務所</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="./css/content.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="main-header">
         <div class="header__inner">
             <h1 class="header__title">
                 <a href="top.html">
@@ -139,44 +139,46 @@
 
 
         <section class="more">
-            <!-- ラフのvirewmore左の線の付け方がわからんです -->
             <h3 class="more__title">view more</h3>
 
-            <div class="more_wrapper">
+            <div class="more__wrapper">
                 <div class="more__flex">
-                    <!-- 同じタブの他の作品を＃idで飛べるようにするらしぃ -->
-                    <!-- ここの数多すぎても変かも -->
                     <a class="more__link" href="#">
                         <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
+                        <p class="more__one">へへへのおへや</p>
+                    </a>
+                    <a class="more__link" href="#">
+                        <img class="more__img" src="./img/hehehe03.jpg" alt="">
+                        <p class="more__one">へへへのおへや</p>
                     </a>
                     <a class="more__link" href="#">
                         <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
+                        <p class="more__one">へへへのおへや</p>
+                    </a>
+                    <a class="more__link" href="#">
+                        <img class="more__img" src="./img/hehehe03.jpg" alt="">
+                        <p class="more__one">へへへのおへや</p>
                     </a>
                     <a class="more__link" href="#">
                         <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
+                        <p class="more__one">へへへのおへや</p>
                     </a>
                     <a class="more__link" href="#">
-                        <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
+                        <img class="more__img" src="./img/hehehe03.jpg" alt="">
+                        <p class="more__one">へへへのおへや</p>
                     </a>
-                    <a class="more__link" href="#">
-                        <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
-                    </a>
-                    <a class="more__link" href="#">
-                        <img class="more__img" src="./img/hehehe02.jpg" alt="">
-                        <p class="more__one">かどのいえ</p>
-                    </a>
+
+
                 </div>
             </div>
-
-
-
         </section>
+
     </main>
+
+    <button id="back-to-top">
+        <img src="./img/arrow.svg" alt="">
+    </button>
+
 
     <footer class="footer">
         <div class="footer__address">
@@ -205,20 +207,23 @@
         document.addEventListener("DOMContentLoaded", () => {
             const container = document.querySelector(".more__flex");
 
-            // 複製を作ってループっぽくする
+            // 1セット分を複製（2セットにする）
             const clone = container.innerHTML;
             container.innerHTML += clone;
 
             let position = 0;
-            const speed = 0.5; // 速度調整（大きいほど速い）
+            const speed = 0.5;
 
             function animate() {
                 position += speed;
+
+                // スクロール位置を更新
                 container.style.transform = `translateX(-${position}px)`;
 
-                // 一巡したらリセット
-                if (position >= container.scrollWidth / 2) {
-                    position = 0;
+                // 1セット分の幅を超えたら即座に戻す（無限ループ）
+                const resetPoint = container.scrollWidth / 2;
+                if (position >= resetPoint) {
+                    position -= resetPoint;
                 }
 
                 requestAnimationFrame(animate);
@@ -227,6 +232,8 @@
             animate();
         });
     </script>
+
+
 
     <script src="./script.js"></script>
 

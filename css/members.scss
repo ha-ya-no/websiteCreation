@@ -14,7 +14,7 @@ $breakpoints: (
     }
 }
 
-@mixin m-inner($w: (1340/1440)*100%, $mw: 1340px) {
+@mixin m-inner($w: 94%, $mw: 15000px) {
     width: $w;
     max-width: $mw;
     margin-left: auto;
@@ -48,7 +48,7 @@ body::before {
     position: absolute;
     inset: 0;
     background-image: url(../img/mokume.webp);
-    background-position: 80% 66%;
+    background-position: 20% 60%;
     background-repeat: no-repeat;
     background-size: 100%;
     transform: scaleX(-1);
@@ -66,7 +66,8 @@ body::before {
     //about
     .box {
 
-
+        padding-top: (40em/16);
+        padding-bottom: (70em/16);
 
         @include m-query(desktop) {
             @include m-flex(flex-end);
@@ -132,8 +133,8 @@ body::before {
             left: (230em/16);
 
             @include m-query(desktop) {
-                bottom: (70em/16);
-                left: (300em/16);
+                bottom: (88em/16);
+                left: (350em/16);
 
             }
 
@@ -314,8 +315,8 @@ body::before {
 
 
             @include m-query(desktop) {
-                bottom: (40em/16);
-                left: (250em/16);
+                bottom: (68em/16);
+                left: (290em/16);
 
             }
 

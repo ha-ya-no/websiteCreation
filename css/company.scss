@@ -14,7 +14,7 @@ $breakpoints: (
     }
 }
 
-@mixin m-inner($w: (1340/1440)*100%, $mw: 1340px) {
+@mixin m-inner($w: 94%, $mw: 15000px) {
     width: $w;
     max-width: $mw;
     margin-left: auto;
@@ -42,6 +42,9 @@ boby {
 .philosophy {
     width: 100%;
     // display: flex;
+    padding-top: (150em/16);
+    padding-bottom: (80em/16);
+
 
     @include m-query(tablet) {
         width: 90%;
@@ -219,7 +222,11 @@ boby {
     }
 
     &__list {
-        padding: (140em/16) 0 (120em/16);
+        padding-top: (120em/16);
+
+        @include m-query(tablet) {
+            padding: (180em/16) (120em/16) (180em/16);
+        }
     }
 
     &__term {
