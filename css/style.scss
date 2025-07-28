@@ -60,6 +60,7 @@ img {
     }
 
     &__title {
+        z-index: 100;
         flex: 1;
     }
 
@@ -109,6 +110,10 @@ img {
 .top-hamburger {
     span {
         background-color: #fff;
+    }
+
+    &.active span {
+        background-color: #333;
     }
 }
 

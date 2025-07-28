@@ -31,6 +31,7 @@ img {
   padding: 2.1875em 0;
 }
 .header__title {
+  z-index: 100;
   flex: 1;
 }
 .header__logo {
@@ -74,6 +75,9 @@ img {
 
 .top-hamburger span {
   background-color: #fff;
+}
+.top-hamburger.active span {
+  background-color: #333;
 }
 
 /*menu*/
