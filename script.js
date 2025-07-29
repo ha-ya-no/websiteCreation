@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             root: null,
-            threshold: 0.95,
+            threshold: 0.1,
         }
     );
 
@@ -190,40 +190,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // /*プロセスアニメーション-デスクトップ-ラインが出る*/
 document.addEventListener('DOMContentLoaded', () => {
-    const flows = Array.from(document.querySelectorAll('.process__flow'));
-    let current = 0;
+    const flows = document.querySelectorAll('.process__flow');
+    const maxHeight = 150; // 線の最大の長さ(px)
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const index = flows.indexOf(entry.target);
-                if (index === current) {
-                    animateLine(index);
-                    observer.unobserve(entry.target);
-                }
-            }
+    function onScroll() {
+        const viewportHeight = window.innerHeight;
+
+        flows.forEach(flow => {
+            const pic = flow.querySelector('.process__pic');
+            if (!pic) return;
+
+            const rect = pic.getBoundingClientRect();
+            const elementTop = rect.top;
+            const elementHeight = rect.height;
+
+            // スクロールでどれくらい通過したかの割合を計算（0〜1）
+            const visibleProgress = 1 - (elementTop + elementHeight / 2) / viewportHeight;
+
+            // 0未満は0に、1以上は1に制限
+            const clampedProgress = Math.min(Math.max(visibleProgress, 0), 1);
+
+            // その割合に応じた高さ
+            const lineHeight = clampedProgress * maxHeight;
+
+            pic.style.setProperty('--line-height', `${lineHeight}px`);
         });
-    }, {
-        threshold: 0.5
-    });
-
-    flows.forEach(flow => observer.observe(flow));
-
-    function animateLine(index) {
-        const pic = flows[index].querySelector('.process__pic');
-        pic.classList.add('line-grow');
-
-        setTimeout(() => {
-            current++;
-            const next = flows[current];
-            if (next) {
-                const bounding = next.getBoundingClientRect();
-                if (bounding.top < window.innerHeight && bounding.bottom > 0) {
-                    animateLine(current);
-                }
-            }
-        }, 2000);
     }
+
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+    onScroll();
 });
 
 
