@@ -88,11 +88,14 @@
 ------------------------------*/
 .span__scroll {
   position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .span__scroll::before {
   content: "";
   position: absolute;
-  left: 25px;
+  left: 50%;
   top: 50px;
   width: 1px;
   height: 100px;

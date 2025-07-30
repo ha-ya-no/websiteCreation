@@ -132,11 +132,12 @@ position: relative;
 ------------------------------*/
 .span__scroll {
     position: relative;
+    width: fit-content;
 
     &::before {
         content: "";
         position: absolute;
-        left: 25px;
+        left: 50%;
         top: 50px;
         width: 1px;
         height: 100px;
