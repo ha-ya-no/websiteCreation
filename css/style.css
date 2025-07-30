@@ -150,12 +150,9 @@ img {
   width: 35px;
   margin-left: auto;
   margin-right: 0;
+  margin-bottom: 0.9375em;
 }
 .menu__link {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 3.125em;
   margin-left: auto;
 }

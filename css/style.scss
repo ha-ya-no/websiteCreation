@@ -191,10 +191,11 @@ img {
         width: 35px;
         margin-left: auto;
         margin-right: 0;
+        margin-bottom: (15em/16);
     }
 
     &__link {
-        @include m-flex(flex-start);
+        // @include m-flex(flex-start);
         margin-top: (50em/16);
         margin-left: auto;
     }
