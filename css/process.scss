@@ -186,7 +186,7 @@ font-family: Helvetica, Arial, sans-serif;
             width: 1px;
             height: var(--line-height, 0);
             background-color: #000;
-            display: block;
+            display: none;
             z-index: 0;
             transition: height 0.3s ease-out;
 
