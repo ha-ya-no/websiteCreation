@@ -102,71 +102,6 @@ body::before {
     }
 
 
-
-    .about {
-        width: 100%;
-
-        @include m-query(desktop) {
-            position: relative;
-            width: 40%;
-        }
-
-        &__label {
-            position: absolute;
-            top: (200em/16);
-            transform: rotate(90deg);
-            font-size: f-rem(16);
-
-            @include m-query(desktop) {
-
-                top: (70em/16);
-                left: (20em/16);
-                font-size: f-rem(18);
-
-
-            }
-        }
-
-        &__container {
-            position: absolute;
-            bottom: (230em/16);
-            left: (230em/16);
-
-            @include m-query(desktop) {
-                bottom: (88em/16);
-                left: (350em/16);
-
-            }
-
-        }
-
-        &__comment {
-
-
-            padding-bottom: (100em/16);
-
-            @include m-query(desktop) {
-                padding-bottom: 0;
-            }
-        }
-
-
-        &__occupation {
-            font-size: f-rem(14);
-        }
-
-        &__name {
-            font-size: f-rem(22);
-            margin-bottom: (2em/16);
-
-            @include m-query(desktop) {
-                font-size: f-rem(28);
-                margin-bottom: (10em/16);
-
-            }
-        }
-    }
-
     //career
     .career {
         padding-bottom: (100em/16);
@@ -261,6 +196,75 @@ body::before {
 
 }
 
+.about {
+    width: 100%;
+    position: relative;
+
+    @include m-query(desktop) {
+        width: 40%;
+    }
+
+    &__label {
+        position: absolute;
+        top: 10%;
+        transform: rotate(90deg);
+        font-size: f-rem(16);
+
+        @include m-query(desktop) {
+
+            top: (70em/16);
+            left: (20em/16);
+            font-size: f-rem(18);
+
+
+        }
+    }
+
+    &__container {
+        width: 132px;
+        position: absolute;
+        bottom: 14%;
+        left: 60%;
+
+        @include m-query(tablet) {
+            bottom: 14%;
+            left: 45%;
+        }
+
+        @include m-query(desktop) {
+            bottom: 14%;
+            left: 62%;
+        }
+
+    }
+
+    &__comment {
+
+
+        padding-bottom: (100em/16);
+
+        @include m-query(desktop) {
+            padding-bottom: 0;
+        }
+    }
+
+
+    &__occupation {
+        font-size: f-rem(14);
+    }
+
+    &__name {
+        font-size: f-rem(22);
+        margin-bottom: (2em/16);
+
+        @include m-query(desktop) {
+            font-size: f-rem(28);
+            margin-bottom: (10em/16);
+
+        }
+    }
+}
+
 
 //profiles
 .profiles {
@@ -297,74 +301,81 @@ body::before {
     }
 
 
-
-    .about {
-        position: relative;
-
-
-        &__label {
-            position: absolute;
-            top: (45em/16);
-            left: (0em/16);
-            transform: rotate(90deg);
-
-
-            @include m-query(desktop) {
-                top: (60em/16);
-                left: (10em/16);
-                font-size: f-rem(18);
-
-            }
+    .profile {
+        &__post {
+            width: 100%;
         }
-
-        &__container {
-            position: absolute;
-            bottom: (47em/16);
-            left: (190em/16);
-
-
-            @include m-query(desktop) {
-                bottom: (68em/16);
-                left: (290em/16);
-
-            }
-
-        }
-
-        &__name {
-            font-size: f-rem(22);
-
-
-            @include m-query(desktop) {
-                font-size: f-rem(32);
-
-
-            }
-        }
-
-        &__occupation {
-            font-size: f-rem(14);
-        }
-
-        &__img {
-            width: 80%;
-        }
-
-        &__comment {
-
-            margin-top: (20em/16);
-
-        }
-
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-
-            li {
-                padding-bottom: (10em/16);
-            }
-        }
-
     }
+
+
+
+    // .about {
+    //     position: relative;
+
+
+    //     &__label {
+    //         position: absolute;
+    //         top: (45em/16);
+    //         left: (0em/16);
+    //         transform: rotate(90deg);
+
+
+    //         @include m-query(desktop) {
+    //             top: (60em/16);
+    //             left: (10em/16);
+    //             font-size: f-rem(18);
+
+    //         }
+    //     }
+
+    //     &__container {
+    //         position: absolute;
+    //         bottom: (47em/16);
+    //         left: (190em/16);
+
+
+    //         @include m-query(desktop) {
+    //             bottom: (68em/16);
+    //             left: (290em/16);
+
+    //         }
+
+    //     }
+
+    //     &__name {
+    //         font-size: f-rem(22);
+
+
+    //         @include m-query(desktop) {
+    //             font-size: f-rem(32);
+
+
+    //         }
+    //     }
+
+    //     &__occupation {
+    //         font-size: f-rem(14);
+    //     }
+
+    //     &__img {
+    //         width: 80%;
+    //     }
+
+    //     &__comment {
+
+    //         margin-top: (20em/16);
+
+    //     }
+
+
+    //     ul {
+    //         list-style: none;
+    //         padding-left: 0;
+
+    //         li {
+    //             padding-bottom: (10em/16);
+    //         }
+    //     }
+
+    // }
 }
