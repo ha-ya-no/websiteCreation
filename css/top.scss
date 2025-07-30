@@ -133,6 +133,7 @@ position: relative;
 .span__scroll {
     position: relative;
     width: fit-content;
+    margin-top: 70px;
 
     &::before {
         content: "";
