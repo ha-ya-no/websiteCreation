@@ -16,10 +16,6 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../img/mokume.webp);
-  background-position: 20% 60%;
-  background-repeat: no-repeat;
-  background-size: 100%;
   transform: scaleX(-1);
   z-index: -1;
   pointer-events: none;
